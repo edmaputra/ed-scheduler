@@ -10,13 +10,13 @@ import java.util.UUID;
 
 public interface JobStorePort {
 
-    Job save(Job job);
+  Job save(Job job);
 
-    Optional<Job> findById(UUID id);
+  Optional<Job> findById(UUID id);
 
-    List<Job> findAll();
+  List<Job> findAll();
 
-    List<Job> findByStatus(JobStatus status);
+  List<Job> findByStatus(JobStatus status);
 
-    List<Job> findByType(JobType type);
+  List<Job> findByType(JobType type);
 }

@@ -56,21 +56,21 @@ databaseChangeLog:
               - column:
                   name: created_by
                   type: varchar(255)
-        
+
         - createIndex:
             indexName: idx_jobs_status
             tableName: jobs
             columns:
               - column:
                   name: status
-        
+
         - createIndex:
             indexName: idx_jobs_type
             tableName: jobs
             columns:
               - column:
                   name: type
-        
+
         - createIndex:
             indexName: idx_jobs_quartz_job_key
             tableName: jobs
@@ -121,21 +121,21 @@ databaseChangeLog:
               - column:
                   name: result
                   type: text
-        
+
         - createIndex:
             indexName: idx_job_executions_job_id
             tableName: job_executions
             columns:
               - column:
                   name: job_id
-        
+
         - createIndex:
             indexName: idx_job_executions_status
             tableName: job_executions
             columns:
               - column:
                   name: status
-        
+
         - createIndex:
             indexName: idx_job_executions_started_at
             tableName: job_executions

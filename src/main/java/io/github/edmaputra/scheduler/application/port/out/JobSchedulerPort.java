@@ -5,9 +5,9 @@ import io.github.edmaputra.scheduler.domain.Job;
 
 public interface JobSchedulerPort {
 
-    ScheduleHandle scheduleCron(Job job);
+  ScheduleHandle scheduleCron(Job job);
 
-    ScheduleHandle scheduleDelayed(Job job);
+  ScheduleHandle scheduleDelayed(Job job);
 
-    void unschedule(Job job);
+  void unschedule(Job job);
 }

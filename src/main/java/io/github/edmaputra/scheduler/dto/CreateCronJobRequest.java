@@ -14,10 +14,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CreateCronJobRequest {
 
-    private String name;
-    private String description;
-    private String cronExpression;
-    private String payload;
-    private String topic;
-    private String createdBy;
+  private String name;
+  private String description;
+  private String cronExpression;
+  private String payload;
+  private String topic;
+  private String createdBy;
 }

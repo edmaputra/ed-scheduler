@@ -4,5 +4,5 @@ import io.github.edmaputra.scheduler.domain.JobExecution;
 
 public interface JobExecutionStorePort {
 
-    JobExecution save(JobExecution execution);
+  JobExecution save(JobExecution execution);
 }

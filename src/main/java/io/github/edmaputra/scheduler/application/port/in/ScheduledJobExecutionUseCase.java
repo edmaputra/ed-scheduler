@@ -4,5 +4,5 @@ import java.util.UUID;
 
 public interface ScheduledJobExecutionUseCase {
 
-    void execute(UUID jobId);
+  void execute(UUID jobId);
 }

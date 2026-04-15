@@ -2,14 +2,14 @@ version: '3.8'
 
 services:
   postgres:
-    image: postgres:16-alpine
+    image: postgres:17.8-alpine3.23
     container_name: scheduler-postgres
     environment:
       POSTGRES_DB: scheduler
       POSTGRES_USER: scheduler
       POSTGRES_PASSWORD: scheduler
     ports:
-      - "5432:5432"
+      - "5434:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:

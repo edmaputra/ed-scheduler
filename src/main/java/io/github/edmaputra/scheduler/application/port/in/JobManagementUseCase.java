@@ -11,17 +11,17 @@ import java.util.UUID;
 
 public interface JobManagementUseCase {
 
-    JobResponse createCronJob(CreateCronJobRequest request);
+  JobResponse createCronJob(CreateCronJobRequest request);
 
-    JobResponse createDelayedJob(CreateDelayedJobRequest request);
+  JobResponse createDelayedJob(CreateDelayedJobRequest request);
 
-    JobResponse getJob(UUID jobId);
+  JobResponse getJob(UUID jobId);
 
-    List<JobResponse> getAllJobs();
+  List<JobResponse> getAllJobs();
 
-    List<JobResponse> getJobsByStatus(JobStatus status);
+  List<JobResponse> getJobsByStatus(JobStatus status);
 
-    List<JobResponse> getJobsByType(JobType type);
+  List<JobResponse> getJobsByType(JobType type);
 
-    void cancelJob(UUID jobId);
+  void cancelJob(UUID jobId);
 }
