@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: scheduler
+      changes:
+        - addColumn:
+            tableName: jobs
+            columns:
+              - column:
+                  name: topic
+                  type: varchar(255)
+                  remarks: "Topic/queue name to publish message to when job executes"

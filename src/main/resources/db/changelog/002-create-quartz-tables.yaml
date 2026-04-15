@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: scheduler
+      comment: Create Quartz Scheduler tables
+      changes:
+        - sqlFile:
+            path: db/changelog/quartz-tables-postgres.sql
+            splitStatements: true
+            stripComments: true

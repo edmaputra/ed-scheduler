@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/001-create-job-tables.yaml
+  - include:
+      file: db/changelog/002-create-quartz-tables.yaml
+  - include:
+      file: db/changelog/003-add-topic-column.yaml

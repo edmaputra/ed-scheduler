@@ -1,0 +1,71 @@
+### Create a CRON Job - Daily Report
+POST http://localhost:8080/api/jobs/cron
+Content-Type: application/json
+
+{
+  "name": "Daily Report",
+  "description": "Generate daily reports at 9 AM",
+  "cronExpression": "0 0 9 * * ?",
+  "topic": "reports.daily",
+  "payload": "{\"type\": \"daily\", \"format\": \"PDF\"}",
+  "createdBy": "admin"
+}
+
+### Create a CRON Job - Every 15 Minutes
+POST http://localhost:8080/api/jobs/cron
+Content-Type: application/json
+
+{
+  "name": "Health Check",
+  "description": "Run health check every 15 minutes",
+  "cronExpression": "0 */15 * * * ?",
+  "topic": "monitoring.healthcheck",
+  "payload": "{\"service\": \"api\", \"checkType\": \"full\"}",
+  "createdBy": "monitoring"
+}
+
+### Create a Delayed Job - Meeting Reminder
+POST http://localhost:8080/api/jobs/delayed
+Content-Type: application/json
+
+{
+  "name": "Meeting Reminder",
+  "description": "Remind about meeting in 2 hours",
+  "scheduledTime": "2026-02-14T15:30:00",
+  "topic": "notifications.reminders",
+  "payload": "{\"userId\": \"123\", \"meetingId\": \"456\"}",
+  "createdBy": "system"
+}
+
+### Create a Delayed Job - Password Reset
+POST http://localhost:8080/api/jobs/delayed
+Content-Type: application/json
+
+{
+  "name": "Password Reset Token Expiry",
+  "description": "Expire password reset token after 1 hour",
+  "scheduledTime": "2026-02-13T15:30:00",
+  "payload": "{\"userId\": \"456\", \"tokenId\": \"reset-token-123\"}",
+  "createdBy": "auth-service"
+}
+
+### Get All Jobs
+GET http://localhost:8080/api/jobs
+
+### Get Jobs by Status - Scheduled
+GET http://localhost:8080/api/jobs?status=SCHEDULED
+
+### Get Jobs by Status - Completed
+GET http://localhost:8080/api/jobs?status=COMPLETED
+
+### Get Jobs by Type - CRON
+GET http://localhost:8080/api/jobs?type=CRON
+
+### Get Jobs by Type - DELAYED
+GET http://localhost:8080/api/jobs?type=DELAYED
+
+### Get Job by ID
+GET http://localhost:8080/api/jobs/550e8400-e29b-41d4-a716-446655440000
+
+### Cancel Job
+DELETE http://localhost:8080/api/jobs/550e8400-e29b-41d4-a716-446655440000
