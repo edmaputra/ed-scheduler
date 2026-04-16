@@ -3,7 +3,12 @@ package io.github.edmaputra.scheduler.integration;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 
+import io.github.edmaputra.scheduler.adapter.in.quartz.JobExecutionCleanupJob;
 import io.github.edmaputra.scheduler.adapter.out.messaging.MessagePublisher;
+import io.github.edmaputra.scheduler.adapter.out.persistence.repository.JobExecutionRepository;
+import io.github.edmaputra.scheduler.adapter.out.persistence.repository.JobRepository;
+import io.github.edmaputra.scheduler.domain.Job;
+import io.github.edmaputra.scheduler.domain.JobExecution;
 import io.github.edmaputra.scheduler.domain.JobStatus;
 import io.github.edmaputra.scheduler.domain.JobType;
 import io.github.edmaputra.scheduler.dto.CreateCronJobRequest;
@@ -13,6 +18,7 @@ import java.time.LocalDateTime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.quartz.Scheduler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -49,6 +55,15 @@ public class JobApiIntegrationTest {
   private int port;
 
   private RestClient restClient;
+
+  @Autowired
+  private JobExecutionCleanupJob jobExecutionCleanupJob;
+
+  @Autowired
+  private JobExecutionRepository jobExecutionRepository;
+
+  @Autowired
+  private JobRepository jobRepository;
 
   @BeforeEach
   void setUp() {
@@ -279,5 +294,90 @@ public class JobApiIntegrationTest {
 
     assertThat(response).isNotNull();
     assertThat(response.getStatus()).isEqualTo(JobStatus.STOPPED);
+  }
+
+  @Test
+  void shouldMarkStaleExecutionsAsTimeout() throws Exception {
+    // Given - Create a job
+    CreateCronJobRequest createRequest = CreateCronJobRequest.builder()
+        .name("Job with Stale Execution")
+        .description("Test description")
+        .cronExpression("0 0 12 * * ?")
+        .payload("{}")
+        .createdBy("test-user")
+        .build();
+
+    JobResponse createdJob = restClient.post()
+        .uri("/api/jobs/cron")
+        .contentType(MediaType.APPLICATION_JSON)
+        .body(createRequest)
+        .retrieve()
+        .body(JobResponse.class);
+
+    // Create a stale execution (RUNNING status, started more than 1 hour ago)
+    Job job = jobRepository.findById(createdJob.getId()).orElseThrow();
+    LocalDateTime staleStartTime = LocalDateTime.now().minusHours(2);
+    
+    JobExecution staleExecution = JobExecution.builder()
+        .job(job)
+        .status(JobStatus.RUNNING)
+        .startedAt(staleStartTime)
+        .build();
+
+    jobExecutionRepository.save(staleExecution);
+
+    // When - Trigger cleanup via Quartz job
+    jobExecutionCleanupJob.execute(null);
+
+    // Then - Verify execution is marked as TIMEOUT
+    JobExecution updatedExecution = jobExecutionRepository.findById(staleExecution.getId())
+        .orElseThrow();
+
+    assertThat(updatedExecution.getStatus()).isEqualTo(JobStatus.TIMEOUT);
+    assertThat(updatedExecution.getCompletedAt()).isNotNull();
+    assertThat(updatedExecution.getStaleSince()).isNotNull();
+    assertThat(updatedExecution.getErrorMessage()).contains("timed out after one hour");
+  }
+
+  @Test
+  void shouldNotMarkRecentExecutionsAsTimeout() throws Exception {
+    // Given - Create a job
+    CreateCronJobRequest createRequest = CreateCronJobRequest.builder()
+        .name("Job with Recent Execution")
+        .description("Test description")
+        .cronExpression("0 0 12 * * ?")
+        .payload("{}")
+        .createdBy("test-user")
+        .build();
+
+    JobResponse createdJob = restClient.post()
+        .uri("/api/jobs/cron")
+        .contentType(MediaType.APPLICATION_JSON)
+        .body(createRequest)
+        .retrieve()
+        .body(JobResponse.class);
+
+    // Create a recent execution (RUNNING status, started less than 1 hour ago)
+    Job job = jobRepository.findById(createdJob.getId()).orElseThrow();
+    LocalDateTime recentStartTime = LocalDateTime.now().minusMinutes(30);
+    
+    JobExecution recentExecution = JobExecution.builder()
+        .job(job)
+        .status(JobStatus.RUNNING)
+        .startedAt(recentStartTime)
+        .build();
+
+    jobExecutionRepository.save(recentExecution);
+
+    // When - Trigger cleanup via Quartz job
+    jobExecutionCleanupJob.execute(null);
+
+    // Then - Verify execution is still RUNNING (not marked as TIMEOUT)
+    JobExecution updatedExecution = jobExecutionRepository.findById(recentExecution.getId())
+        .orElseThrow();
+
+    assertThat(updatedExecution.getStatus()).isEqualTo(JobStatus.RUNNING);
+    assertThat(updatedExecution.getCompletedAt()).isNull();
+    assertThat(updatedExecution.getErrorMessage()).isNull();
   }
 }
