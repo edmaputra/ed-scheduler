@@ -39,7 +39,7 @@ public class JobManagementService implements JobManagementUseCase {
         .name(request.getName())
         .description(request.getDescription())
         .type(JobType.CRON)
-        .status(JobStatus.SCHEDULED)
+        .status(JobStatus.PENDING)
         .cronExpression(request.getCronExpression())
         .payload(request.getPayload())
         .topic(request.getTopic())
@@ -70,7 +70,7 @@ public class JobManagementService implements JobManagementUseCase {
         .name(request.getName())
         .description(request.getDescription())
         .type(JobType.DELAYED)
-        .status(JobStatus.SCHEDULED)
+        .status(JobStatus.PENDING)
         .scheduledTime(request.getScheduledTime())
         .payload(request.getPayload())
         .topic(request.getTopic())
@@ -121,7 +121,7 @@ public class JobManagementService implements JobManagementUseCase {
     Job job = jobStorePort.findById(jobId)
         .orElseThrow(() -> new RuntimeException("Job not found: " + jobId));
 
-    if (job.getStatus() == JobStatus.COMPLETED || job.getStatus() == JobStatus.CANCELLED) {
+    if (job.getStatus().isTerminal()) {
       throw new IllegalStateException("Cannot cancel job in status: " + job.getStatus());
     }
 
@@ -130,6 +130,25 @@ public class JobManagementService implements JobManagementUseCase {
     jobStorePort.save(job);
 
     log.info("Job cancelled: {} (ID: {})", job.getName(), job.getId());
+  }
+
+  @Override
+  @Transactional
+  public void stopJob(UUID jobId) {
+    Job job = jobStorePort.findById(jobId)
+        .orElseThrow(() -> new RuntimeException("Job not found: " + jobId));
+
+    if (job.getStatus().isTerminal()) {
+      throw new IllegalStateException("Cannot stop job in status: " + job.getStatus());
+    }
+
+    jobSchedulerPort.interrupt(job);
+
+    job.setStatus(JobStatus.STOPPED);
+    job.setStoppedAt(LocalDateTime.now());
+    jobStorePort.save(job);
+
+    log.info("Job stopped: {} (ID: {})", job.getName(), job.getId());
   }
 
   private JobResponse mapToResponse(Job job) {
@@ -145,6 +164,8 @@ public class JobManagementService implements JobManagementUseCase {
         .topic(job.getTopic())
         .createdAt(job.getCreatedAt())
         .updatedAt(job.getUpdatedAt())
+        .stoppedAt(job.getStoppedAt())
+        .lastExecutionAt(job.getLastExecutionAt())
         .createdBy(job.getCreatedBy())
         .build();
   }

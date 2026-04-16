@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 import java.time.LocalDateTime;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
@@ -46,6 +47,9 @@ public class Job {
   @Column(nullable = false)
   private JobStatus status;
 
+  @Version
+  private Long version;
+
   /**
    * CRON expression for CRON jobs (e.g., "0 0 12 * * ?") Null for DELAYED jobs
    */
@@ -81,6 +85,12 @@ public class Job {
    */
   @Column(name = "quartz_trigger_key")
   private String quartzTriggerKey;
+
+  @Column(name = "stopped_at")
+  private LocalDateTime stoppedAt;
+
+  @Column(name = "last_execution_at")
+  private LocalDateTime lastExecutionAt;
 
   @Column(name = "created_at", nullable = false, updatable = false)
   private LocalDateTime createdAt;

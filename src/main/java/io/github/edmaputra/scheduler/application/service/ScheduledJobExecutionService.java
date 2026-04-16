@@ -7,6 +7,7 @@ import io.github.edmaputra.scheduler.application.port.out.MessageDispatchPort;
 import io.github.edmaputra.scheduler.domain.Job;
 import io.github.edmaputra.scheduler.domain.JobExecution;
 import io.github.edmaputra.scheduler.domain.JobStatus;
+import io.github.edmaputra.scheduler.domain.JobType;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,6 +34,11 @@ public class ScheduledJobExecutionService implements ScheduledJobExecutionUseCas
     Job job = jobStorePort.findById(jobId)
         .orElseThrow(() -> new RuntimeException("Job not found: " + jobId));
 
+    if (job.getStatus().isTerminal()) {
+      log.info("Skipping execution for job {} in terminal status {}", jobId, job.getStatus());
+      return;
+    }
+
     JobExecution execution = JobExecution.builder()
         .job(job)
         .startedAt(LocalDateTime.now())
@@ -41,6 +47,7 @@ public class ScheduledJobExecutionService implements ScheduledJobExecutionUseCas
     execution = jobExecutionStorePort.save(execution);
 
     job.setStatus(JobStatus.RUNNING);
+    job.setLastExecutionAt(LocalDateTime.now());
     jobStorePort.save(job);
 
     try {
@@ -51,7 +58,10 @@ public class ScheduledJobExecutionService implements ScheduledJobExecutionUseCas
       execution.setResult(result);
       jobExecutionStorePort.save(execution);
 
-      job.setStatus(JobStatus.COMPLETED);
+      if (job.getType() == JobType.DELAYED) {
+        job.setStatus(JobStatus.COMPLETED);
+      }
+
       jobStorePort.save(job);
 
       log.info("Job {} completed successfully", jobId);
@@ -65,10 +75,11 @@ public class ScheduledJobExecutionService implements ScheduledJobExecutionUseCas
       execution.setErrorStackTrace(getStackTraceAsString(e));
       jobExecutionStorePort.save(execution);
 
-      job.setStatus(JobStatus.FAILED);
-      jobStorePort.save(job);
+      if (job.getType() == JobType.DELAYED) {
+        job.setStatus(JobStatus.COMPLETED);
+      }
 
-      throw new RuntimeException("Job execution failed", e);
+      jobStorePort.save(job);
     }
   }
 

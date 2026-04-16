@@ -29,5 +29,7 @@ public class JobResponse {
   private String topic;
   private LocalDateTime createdAt;
   private LocalDateTime updatedAt;
+  private LocalDateTime stoppedAt;
+  private LocalDateTime lastExecutionAt;
   private String createdBy;
 }

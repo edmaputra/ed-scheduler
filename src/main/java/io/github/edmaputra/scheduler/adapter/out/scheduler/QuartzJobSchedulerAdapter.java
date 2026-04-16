@@ -80,6 +80,20 @@ public class QuartzJobSchedulerAdapter implements JobSchedulerPort {
   }
 
   @Override
+  public boolean interrupt(Job job) {
+    try {
+      if (job.getQuartzJobKey() == null || job.getQuartzJobKey().isEmpty()) {
+        return false;
+      }
+
+      return scheduler.interrupt(new JobKey(job.getQuartzJobKey()));
+    } catch (SchedulerException e) {
+      log.error("Failed to interrupt job in Quartz", e);
+      throw new RuntimeException("Failed to interrupt job", e);
+    }
+  }
+
+  @Override
   public void unschedule(Job job) {
     try {
       if (job.getQuartzTriggerKey() != null && !job.getQuartzTriggerKey().isEmpty()) {

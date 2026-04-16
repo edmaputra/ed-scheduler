@@ -24,4 +24,6 @@ public interface JobManagementUseCase {
   List<JobResponse> getJobsByType(JobType type);
 
   void cancelJob(UUID jobId);
+
+  void stopJob(UUID jobId);
 }

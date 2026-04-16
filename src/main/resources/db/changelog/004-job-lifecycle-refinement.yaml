@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4-add-job-lifecycle-columns
+      author: scheduler
+      changes:
+        - addColumn:
+            tableName: jobs
+            columns:
+              - column:
+                  name: stopped_at
+                  type: timestamp
+              - column:
+                  name: last_execution_at
+                  type: timestamp
+              - column:
+                  name: version
+                  type: bigint
+                  defaultValueNumeric: 0
+
+        - addColumn:
+            tableName: job_executions
+            columns:
+              - column:
+                  name: stale_since
+                  type: timestamp
+              - column:
+                  name: version
+                  type: bigint
+                  defaultValueNumeric: 0
+
+  - changeSet:
+      id: 4-add-job-execution-stale-index
+      author: scheduler
+      changes:
+        - createIndex:
+            indexName: idx_job_executions_status_started_at
+            tableName: job_executions
+            columns:
+              - column:
+                  name: status
+              - column:
+                  name: started_at
+                  descending: true

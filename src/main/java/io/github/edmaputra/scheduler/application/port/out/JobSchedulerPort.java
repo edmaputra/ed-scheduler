@@ -9,5 +9,7 @@ public interface JobSchedulerPort {
 
   ScheduleHandle scheduleDelayed(Job job);
 
+  boolean interrupt(Job job);
+
   void unschedule(Job job);
 }

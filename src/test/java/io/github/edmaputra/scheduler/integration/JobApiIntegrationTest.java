@@ -17,6 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.web.client.RestClient;
@@ -31,12 +32,14 @@ public class JobApiIntegrationTest {
   @TestConfiguration
   static class QuartzTestConfig {
 
-    @Bean
+    @Bean(name = "testScheduler")
+    @Primary
     Scheduler scheduler() {
       return mock(Scheduler.class);
     }
 
-    @Bean
+    @Bean(name = "testMessagePublisher")
+    @Primary
     MessagePublisher messagePublisher() {
       return mock(MessagePublisher.class);
     }
@@ -77,7 +80,7 @@ public class JobApiIntegrationTest {
     assertThat(response).isNotNull();
     assertThat(response.getName()).isEqualTo("Test CRON Job");
     assertThat(response.getType()).isEqualTo(JobType.CRON);
-    assertThat(response.getStatus()).isEqualTo(JobStatus.SCHEDULED);
+    assertThat(response.getStatus()).isEqualTo(JobStatus.PENDING);
     assertThat(response.getCronExpression()).isEqualTo("0 0 9 * * ?");
     assertThat(response.getId()).isNotNull();
   }
@@ -106,7 +109,7 @@ public class JobApiIntegrationTest {
     assertThat(response).isNotNull();
     assertThat(response.getName()).isEqualTo("Test Delayed Job");
     assertThat(response.getType()).isEqualTo(JobType.DELAYED);
-    assertThat(response.getStatus()).isEqualTo(JobStatus.SCHEDULED);
+    assertThat(response.getStatus()).isEqualTo(JobStatus.PENDING);
     assertThat(response.getScheduledTime()).isNotNull();
     assertThat(response.getId()).isNotNull();
   }
@@ -240,5 +243,41 @@ public class JobApiIntegrationTest {
 
     assertThat(response).isNotNull();
     assertThat(response.getStatus()).isEqualTo(JobStatus.CANCELLED);
+  }
+
+  @Test
+  void shouldStopJob() {
+    // Given - Create a job first
+    CreateCronJobRequest createRequest = CreateCronJobRequest.builder()
+        .name("Job to Stop")
+        .description("Test description")
+        .cronExpression("0 0 12 * * ?")
+        .payload("{}")
+        .createdBy("test-user")
+        .build();
+
+    JobResponse createdJob = restClient.post()
+        .uri("/api/jobs/cron")
+        .contentType(MediaType.APPLICATION_JSON)
+        .body(createRequest)
+        .retrieve()
+        .body(JobResponse.class);
+
+    String jobId = createdJob.getId().toString();
+
+    // When
+    restClient.post()
+        .uri("/api/jobs/" + jobId + "/stop")
+        .retrieve()
+        .toBodilessEntity();
+
+    // Then - Verify job is stopped
+    JobResponse response = restClient.get()
+        .uri("/api/jobs/" + jobId)
+        .retrieve()
+        .body(JobResponse.class);
+
+    assertThat(response).isNotNull();
+    assertThat(response.getStatus()).isEqualTo(JobStatus.STOPPED);
   }
 }

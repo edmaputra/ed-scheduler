@@ -12,6 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 import java.time.LocalDateTime;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
@@ -44,6 +45,9 @@ public class JobExecution {
   @Column(name = "completed_at")
   private LocalDateTime completedAt;
 
+  @Version
+  private Long version;
+
   @Enumerated(EnumType.STRING)
   @Column(nullable = false)
   private JobStatus status;
@@ -65,6 +69,9 @@ public class JobExecution {
    */
   @Column(columnDefinition = "TEXT")
   private String result;
+
+  @Column(name = "stale_since")
+  private LocalDateTime staleSince;
 
   @PrePersist
   protected void onCreate() {

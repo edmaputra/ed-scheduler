@@ -93,4 +93,14 @@ public class JobController {
     jobManagementUseCase.cancelJob(id);
     return ResponseEntity.noContent().build();
   }
+
+  /**
+   * Stop a running job
+   */
+  @PostMapping("/{id}/stop")
+  public ResponseEntity<Void> stopJob(@PathVariable UUID id) {
+    log.info("Received request to stop job: {}", id);
+    jobManagementUseCase.stopJob(id);
+    return ResponseEntity.noContent().build();
+  }
 }

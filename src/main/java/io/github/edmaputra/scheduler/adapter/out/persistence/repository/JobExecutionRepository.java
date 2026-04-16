@@ -3,6 +3,7 @@ package io.github.edmaputra.scheduler.adapter.out.persistence.repository;
 import io.github.edmaputra.scheduler.domain.Job;
 import io.github.edmaputra.scheduler.domain.JobExecution;
 import io.github.edmaputra.scheduler.domain.JobStatus;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -28,4 +29,9 @@ public interface JobExecutionRepository extends JpaRepository<JobExecution, UUID
    * Find latest execution for a job
    */
   JobExecution findFirstByJobOrderByStartedAtDesc(Job job);
+
+  /**
+   * Find executions by status that started before the given cutoff.
+   */
+  List<JobExecution> findByStatusAndStartedAtBefore(JobStatus status, LocalDateTime startedAt);
 }
