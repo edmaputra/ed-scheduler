@@ -1,0 +1,1329 @@
+Initialized native services in: /Users/bangun.saputra/.gradle/native
+Initialized jansi services in: /Users/bangun.saputra/.gradle/native
+Found daemon DaemonInfo{pid=8080, address=[87fb41a8-77c9-4d68-bbea-4af7c898ed1c port:49679, addresses:[/127.0.0.1]], state=Idle, lastBusy=1776394895724, context=DefaultDaemonContext[uid=8911f94c-be2a-4dc5-9571-5b4e157a20b0,javaHome=/Users/bangun.saputra/.vscode/extensions/redhat.java-1.54.2026041108-darwin-arm64/jre/21.0.10-macosx-aarch64,javaVersion=21,javaVendor=Eclipse Adoptium,daemonRegistryDir=/Users/bangun.saputra/.gradle/daemon,pid=8080,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=384m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=ID,-Duser.language=en,-Duser.variant]} however its context does not match the desired criteria.
+JVM is incompatible.
+Wanted: DaemonRequestContext{jvmCriteria=/Users/bangun.saputra/.sdkman/candidates/java/25.0.2-graalce (no Daemon JVM specified, using current Java home), daemonOpts=[-XX:MaxMetaspaceSize=384m, -XX:+HeapDumpOnOutOfMemoryError, -Xms256m, -Xmx512m, -Dfile.encoding=UTF-8, -Duser.country=ID, -Duser.language=en, -Duser.variant], applyInstrumentationAgent=true, nativeServicesMode=ENABLED, priority=NORMAL}
+Actual: DefaultDaemonContext[uid=8911f94c-be2a-4dc5-9571-5b4e157a20b0,javaHome=/Users/bangun.saputra/.vscode/extensions/redhat.java-1.54.2026041108-darwin-arm64/jre/21.0.10-macosx-aarch64,javaVersion=21,javaVendor=Eclipse Adoptium,daemonRegistryDir=/Users/bangun.saputra/.gradle/daemon,pid=8080,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=384m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=ID,-Duser.language=en,-Duser.variant]
+
+  Looking for a different daemon...
+The client will now receive all logging from the daemon (pid: 40341). The daemon log file: /Users/bangun.saputra/.gradle/daemon/9.3.0/daemon-40341.out.log
+Starting 3rd build in daemon [uptime: 2 mins 18.411 secs, performance: 100%, GC rate: 0.00/s, heap usage: 4% of 512 MiB, non-heap usage: 21% of 384 MiB]
+Using 14 worker leases.
+Operational build model parameters: {requiresToolingModels=false, parallelProjectExecution=false, configureOnDemand=false, configurationCache=false, configurationCacheParallelStore=false, configurationCacheParallelLoad=true, isolatedProjects=false, parallelProjectConfiguration=false, intermediateModelCache=false, parallelToolingApiActions=false, invalidateCoupledProjects=false, modelAsProjectDependency=false, resilientModelBuilding=false}
+Now considering [/Users/bangun.saputra/Bangun/Projects/scheduler] as hierarchies to watch
+Watching the file system is configured to be enabled if available
+File system watching is active
+Starting Build
+Settings evaluated using settings file '/Users/bangun.saputra/Bangun/Projects/scheduler/settings.gradle'.
+Projects loaded. Root project using build file '/Users/bangun.saputra/Bangun/Projects/scheduler/build.gradle'.
+Included projects: [root project 'scheduler']
+Starting process 'command '/usr/libexec/java_home''. Working directory: /Users/bangun.saputra/.gradle/daemon/9.3.0 Command: /usr/libexec/java_home -V
+Successfully started process 'command '/usr/libexec/java_home''
+Java Toolchain auto-detection failed to find local MacOS system JVMs
+
+> Configure project :
+Evaluating root project 'scheduler' using build file '/Users/bangun.saputra/Bangun/Projects/scheduler/build.gradle'.
+Resolved plugin [id: 'java']
+Resolved plugin [id: 'org.springframework.boot', version: '4.0.2']
+Resolved plugin [id: 'io.spring.dependency-management', version: '1.1.7']
+Resolved plugin [id: 'org.graalvm.buildtools.native', version: '0.11.4']
+Applying dependency management to configuration 'annotationProcessor' in project 'scheduler'
+Applying dependency management to configuration 'apiElements' in project 'scheduler'
+Applying dependency management to configuration 'archives' in project 'scheduler'
+Applying dependency management to configuration 'bootArchives' in project 'scheduler'
+Applying dependency management to configuration 'compileClasspath' in project 'scheduler'
+Applying dependency management to configuration 'compileOnly' in project 'scheduler'
+Applying dependency management to configuration 'default' in project 'scheduler'
+Applying dependency management to configuration 'developmentOnly' in project 'scheduler'
+Applying dependency management to configuration 'implementation' in project 'scheduler'
+Applying dependency management to configuration 'mainSourceElements' in project 'scheduler'
+Applying dependency management to configuration 'productionRuntimeClasspath' in project 'scheduler'
+Applying dependency management to configuration 'runtimeClasspath' in project 'scheduler'
+Applying dependency management to configuration 'runtimeElements' in project 'scheduler'
+Applying dependency management to configuration 'runtimeOnly' in project 'scheduler'
+Applying dependency management to configuration 'testAndDevelopmentOnly' in project 'scheduler'
+Applying dependency management to configuration 'testAnnotationProcessor' in project 'scheduler'
+Applying dependency management to configuration 'testCompileClasspath' in project 'scheduler'
+Applying dependency management to configuration 'testCompileOnly' in project 'scheduler'
+Applying dependency management to configuration 'testImplementation' in project 'scheduler'
+Applying dependency management to configuration 'testResultsElementsForTest' in project 'scheduler'
+Applying dependency management to configuration 'testRuntimeClasspath' in project 'scheduler'
+Applying dependency management to configuration 'testRuntimeOnly' in project 'scheduler'
+[native-image-plugin] ====================
+[native-image-plugin] Initializing project: scheduler
+[native-image-plugin] ====================
+Applying dependency management to configuration 'nativeImageCompileOnly' in project 'scheduler'
+Applying dependency management to configuration 'nativeImageClasspath' in project 'scheduler'
+Applying dependency management to configuration 'nativeImageTestCompileOnly' in project 'scheduler'
+Applying dependency management to configuration 'nativeImageTestClasspath' in project 'scheduler'
+Applying dependency management to configuration 'aotImplementation' in project 'scheduler'
+Applying dependency management to configuration 'aotCompileOnly' in project 'scheduler'
+Applying dependency management to configuration 'aotCompileClasspath' in project 'scheduler'
+Applying dependency management to configuration 'aotAnnotationProcessor' in project 'scheduler'
+Applying dependency management to configuration 'aotRuntimeOnly' in project 'scheduler'
+Applying dependency management to configuration 'aotRuntimeClasspath' in project 'scheduler'
+Applying dependency management to configuration 'aotTestImplementation' in project 'scheduler'
+Applying dependency management to configuration 'aotTestCompileOnly' in project 'scheduler'
+Applying dependency management to configuration 'aotTestCompileClasspath' in project 'scheduler'
+Applying dependency management to configuration 'aotTestAnnotationProcessor' in project 'scheduler'
+Applying dependency management to configuration 'aotTestRuntimeOnly' in project 'scheduler'
+Applying dependency management to configuration 'aotTestRuntimeClasspath' in project 'scheduler'
+Applying dependency management to configuration 'processAotClasspath' in project 'scheduler'
+Applying dependency management to configuration 'processTestAotClasspath' in project 'scheduler'
+Applying dependency management to configuration 'nativeImageTestCompileOnlyAuto' in project 'scheduler'
+Applying dependency management to configuration 'nativeImageTestClasspathInternal' in project 'scheduler'
+[native-image-plugin] Not instrumenting task with native-image-agent: compileTestJava. Reason: Task does not match user predicate
+[native-image-plugin] Not instrumenting task with native-image-agent: dependencyManagement. Reason: Task does not match user predicate
+All projects evaluated.
+Task name matched 'test'
+Selected primary task 'test' from project :
+[native-image-plugin] Not instrumenting task with native-image-agent: compileAotTestJava. Reason: Task does not match user predicate
+[native-image-plugin] Not instrumenting task with native-image-agent: aotTestClasses. Reason: Task does not match user predicate
+Resolving global dependency management for project 'scheduler'
+Excluding []
+Excluding []
+[native-image-plugin] Not instrumenting task with native-image-agent: compileJava. Reason: Task does not match user predicate
+[native-image-plugin] Not instrumenting task with native-image-agent: classes. Reason: Task does not match user predicate
+[native-image-plugin] Not instrumenting task with native-image-agent: testClasses. Reason: Task does not match user predicate
+[native-image-plugin] Not instrumenting task with native-image-agent: jar. Reason: Task does not match user predicate
+[native-image-plugin] Not instrumenting task with native-image-agent: bootJar. Reason: Task does not match user predicate
+[native-image-plugin] Not instrumenting task with native-image-agent: nativeCompileClasspathJar. Reason: Task does not match user predicate
+[native-image-plugin] Not instrumenting task with native-image-agent: nativeTestCompileClasspathJar. Reason: Task does not match user predicate
+[native-image-plugin] Not instrumenting task with native-image-agent: processAotTestResources. Reason: Task does not match user predicate
+Excluding []
+Excluding []
+Excluding []
+[native-image-plugin] Not instrumenting task with native-image-agent: processResources. Reason: Task does not match user predicate
+Excluding []
+Excluding []
+Excluding []
+Excluding []
+[native-image-plugin] Not instrumenting task with native-image-agent: processTestResources. Reason: Task does not match user predicate
+Tasks to be executed: [task ':compileJava', task ':processResources', task ':classes', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':processTestAot', task ':compileAotTestJava', task ':processAotTestResources', task ':aotTestClasses', task ':test']
+Tasks that were excluded: []
+[native-image-plugin] Not instrumenting task with native-image-agent: clean. Reason: Task does not match user predicate
+Resolve mutations for :compileJava (Thread[#627,Execution worker,5,main]) started.
+:compileJava (Thread[#638,Execution worker Thread 12,5,main]) started.
+
+> Task :compileJava UP-TO-DATE
+Custom actions are attached to task ':compileJava'.
+Caching disabled for task ':compileJava' because:
+  Build cache is disabled
+Skipping task ':compileJava' as it is up-to-date.
+Resolve mutations for :processResources (Thread[#638,Execution worker Thread 12,5,main]) started.
+:processResources (Thread[#638,Execution worker Thread 12,5,main]) started.
+
+> Task :processResources UP-TO-DATE
+Caching disabled for task ':processResources' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':processResources' as it is up-to-date.
+Resolve mutations for :classes (Thread[#638,Execution worker Thread 12,5,main]) started.
+:classes (Thread[#638,Execution worker Thread 12,5,main]) started.
+
+> Task :classes UP-TO-DATE
+Skipping task ':classes' as it has no actions.
+Resolve mutations for :compileTestJava (Thread[#638,Execution worker Thread 12,5,main]) started.
+:compileTestJava (Thread[#638,Execution worker Thread 12,5,main]) started.
+
+> Task :compileTestJava UP-TO-DATE
+Custom actions are attached to task ':compileTestJava'.
+Caching disabled for task ':compileTestJava' because:
+  Build cache is disabled
+Skipping task ':compileTestJava' as it is up-to-date.
+Resolve mutations for :processTestResources (Thread[#638,Execution worker Thread 12,5,main]) started.
+:processTestResources (Thread[#638,Execution worker Thread 12,5,main]) started.
+
+> Task :processTestResources UP-TO-DATE
+Caching disabled for task ':processTestResources' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':processTestResources' as it is up-to-date.
+Resolve mutations for :testClasses (Thread[#638,Execution worker Thread 12,5,main]) started.
+:testClasses (Thread[#638,Execution worker Thread 12,5,main]) started.
+
+> Task :testClasses UP-TO-DATE
+Skipping task ':testClasses' as it has no actions.
+Resolve mutations for :processTestAot (Thread[#638,Execution worker Thread 12,5,main]) started.
+:processTestAot (Thread[#638,Execution worker Thread 12,5,main]) started.
+
+> Task :processTestAot UP-TO-DATE
+Custom actions are attached to task ':processTestAot'.
+Caching disabled for task ':processTestAot' because:
+  Build cache is disabled
+Skipping task ':processTestAot' as it is up-to-date.
+Resolve mutations for :compileAotTestJava (Thread[#638,Execution worker Thread 12,5,main]) started.
+:compileAotTestJava (Thread[#638,Execution worker Thread 12,5,main]) started.
+
+> Task :compileAotTestJava UP-TO-DATE
+Custom actions are attached to task ':compileAotTestJava'.
+Caching disabled for task ':compileAotTestJava' because:
+  Build cache is disabled
+Skipping task ':compileAotTestJava' as it is up-to-date.
+Resolve mutations for :processAotTestResources (Thread[#638,Execution worker Thread 12,5,main]) started.
+:processAotTestResources (Thread[#638,Execution worker Thread 12,5,main]) started.
+
+> Task :processAotTestResources UP-TO-DATE
+Caching disabled for task ':processAotTestResources' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':processAotTestResources' as it is up-to-date.
+Resolve mutations for :aotTestClasses (Thread[#638,Execution worker Thread 12,5,main]) started.
+:aotTestClasses (Thread[#638,Execution worker Thread 12,5,main]) started.
+
+> Task :aotTestClasses UP-TO-DATE
+Skipping task ':aotTestClasses' as it has no actions.
+Resolve mutations for :test (Thread[#638,Execution worker Thread 12,5,main]) started.
+:test (Thread[#638,Execution worker Thread 12,5,main]) started.
+Gradle Test Executor 3 started executing tests.
+
+> Task :test
+Custom actions are attached to task ':test'.
+Caching disabled for task ':test' because:
+  Build cache is disabled
+Task ':test' is not up-to-date because:
+  Task has failed previously.
+Starting process 'Gradle Test Executor 3'. Working directory: /Users/bangun.saputra/Bangun/Projects/scheduler Command: /Users/bangun.saputra/.sdkman/candidates/java/25.0.2-graalce/bin/java -Djunit.platform.listeners.uid.tracking.enabled=true -Djunit.platform.listeners.uid.tracking.output.dir=/Users/bangun.saputra/Bangun/Projects/scheduler/build/test-results/test/testlist -Dorg.gradle.internal.worker.tmpdir=/Users/bangun.saputra/Bangun/Projects/scheduler/build/tmp/test/work @/Users/bangun.saputra/.gradle/.tmp/gradle-worker-classpath1298151526878943172txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=ID -Duser.language=en -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 3'
+Successfully started process 'Gradle Test Executor 3'
+
+SchedulerApplicationTests STANDARD_OUT
+    11:03:38.675 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [io.github.edmaputra.scheduler.SchedulerApplicationTests]: SchedulerApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+    11:03:38.735 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration io.github.edmaputra.scheduler.SchedulerApplication for test class io.github.edmaputra.scheduler.SchedulerApplicationTests
+
+      .   ____          _            __ _ _
+     /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+    ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+     \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+      '  |____| .__|_| |_|_| |_\__, | / / / /
+     =========|_|==============|___/=/_/_/_/
+
+     :: Spring Boot ::                (v4.0.2)
+
+    2026-04-17T11:03:38.881+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.SchedulerApplicationTests        : Starting SchedulerApplicationTests using Java 25.0.2 with PID 40939 (started by bangun.saputra in /Users/bangun.saputra/Bangun/Projects/scheduler)
+    2026-04-17T11:03:38.882+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.SchedulerApplicationTests        : The following 1 profile is active: "test"
+    2026-04-17T11:03:39.162+07:00  INFO 40939 --- [scheduler] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+    2026-04-17T11:03:39.196+07:00  INFO 40939 --- [scheduler] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
+    2026-04-17T11:03:39.398+07:00  INFO 40939 --- [scheduler] [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+    2026-04-17T11:03:39.430+07:00  INFO 40939 --- [scheduler] [    Test worker] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+    2026-04-17T11:03:39.605+07:00  INFO 40939 --- [scheduler] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+    2026-04-17T11:03:39.619+07:00  INFO 40939 --- [scheduler] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+    2026-04-17T11:03:39.690+07:00  INFO 40939 --- [scheduler] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:scheduler_test user=SA
+    2026-04-17T11:03:39.690+07:00  INFO 40939 --- [scheduler] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+    2026-04-17T11:03:39.702+07:00  WARN 40939 --- [scheduler] [    Test worker] org.hibernate.orm.core                   : HHH000511: The 2.4.240 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 13.0.0. Check the community dialects project for available legacy versions.
+    2026-04-17T11:03:39.704+07:00  WARN 40939 --- [scheduler] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+    2026-04-17T11:03:39.712+07:00  INFO 40939 --- [scheduler] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+    	Database JDBC URL [jdbc:h2:mem:scheduler_test]
+    	Database driver: H2 JDBC Driver
+    	Database dialect: PostgreSQLDialect
+    	Database version: 2.4.240
+    	Default catalog/schema: SCHEDULER_TEST/PUBLIC
+    	Autocommit mode: undefined/unknown
+    	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+    	JDBC fetch size: 100
+    	Pool: DataSourceConnectionProvider
+    	Minimum pool size: undefined/unknown
+    	Maximum pool size: undefined/unknown
+    2026-04-17T11:03:40.058+07:00  INFO 40939 --- [scheduler] [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+    2026-04-17T11:03:40.078+07:00  INFO 40939 --- [scheduler] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+    2026-04-17T11:03:40.112+07:00  INFO 40939 --- [scheduler] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+    2026-04-17T11:03:40.177+07:00  WARN 40939 --- [scheduler] [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mockMessageEventListener' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/adapter/in/messaging/MockMessageEventListener.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jobScheduleEventService' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/application/service/JobScheduleEventService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jobManagementService' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/application/service/JobManagementService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'quartzJobSchedulerAdapter' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/adapter/out/scheduler/QuartzJobSchedulerAdapter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.quartz.Scheduler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+    2026-04-17T11:03:40.177+07:00  INFO 40939 --- [scheduler] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+    2026-04-17T11:03:40.179+07:00  INFO 40939 --- [scheduler] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+    2026-04-17T11:03:40.179+07:00  INFO 40939 --- [scheduler] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+SchedulerApplicationTests STANDARD_ERROR
+
+
+
+    ============================
+    CONDITIONS EVALUATION REPORT
+    ============================
+
+
+    Positive matches:
+    -----------------
+
+       AopAutoConfiguration matched:
+          - @ConditionalOnBooleanProperty (spring.aop.auto=true) matched (OnPropertyCondition)
+
+       AopAutoConfiguration.AspectJAutoProxyingConfiguration matched:
+          - @ConditionalOnClass found required class 'org.aspectj.weaver.Advice' (OnClassCondition)
+
+       AopAutoConfiguration.AspectJAutoProxyingConfiguration.CglibAutoProxyConfiguration matched:
+          - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+       ApplicationAvailabilityAutoConfiguration#applicationAvailability matched:
+          - @ConditionalOnMissingBean (types: org.springframework.boot.availability.ApplicationAvailability; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       DataJpaRepositoriesAutoConfiguration matched:
+          - @ConditionalOnClass found required class 'org.springframework.data.jpa.repository.JpaRepository' (OnClassCondition)
+          - @ConditionalOnBooleanProperty (spring.data.jpa.repositories.enabled=true) matched (OnPropertyCondition)
+          - @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean,org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       DataSourceAutoConfiguration matched:
+          - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+          - @ConditionalOnMissingBean (types: io.r2dbc.spi.ConnectionFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       DataSourceAutoConfiguration.PooledDataSourceConfiguration matched:
+          - AnyNestedCondition 1 matched 1 did not; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.PooledDataSourceAvailable PooledDataSource found supported DataSource; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.ExplicitType @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (DataSourceAutoConfiguration.PooledDataSourceCondition)
+          - @ConditionalOnMissingBean (types: javax.sql.DataSource,javax.sql.XADataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       DataSourceAutoConfiguration.PooledDataSourceConfiguration#jdbcConnectionDetails matched:
+          - @ConditionalOnMissingBean (types: org.springframework.boot.jdbc.autoconfigure.JdbcConnectionDetails; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       DataSourceConfiguration.Hikari matched:
+          - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+          - @ConditionalOnProperty (spring.datasource.type=com.zaxxer.hikari.HikariDataSource) matched (OnPropertyCondition)
+          - @ConditionalOnMissingBean (types: javax.sql.DataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       DataSourceInitializationAutoConfiguration matched:
+          - @ConditionalOnClass found required class 'org.springframework.jdbc.datasource.init.DatabasePopulator' (OnClassCondition)
+          - SQL InitializationDatabase Initialization default value is EMBEDDED (OnSqlInitializationCondition)
+          - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.boot.sql.autoconfigure.init.ApplicationScriptDatabaseInitializer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       DataSourcePoolMetadataProvidersConfiguration.HikariPoolDataSourceMetadataProviderConfiguration matched:
+          - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+
+       DataSourceTransactionManagerAutoConfiguration matched:
+          - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate', 'org.springframework.transaction.TransactionManager' (OnClassCondition)
+
+       DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration matched:
+          - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+       DataWebAutoConfiguration matched:
+          - @ConditionalOnClass found required classes 'org.springframework.data.web.PageableHandlerMethodArgumentResolver', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+          - found 'session' scope (OnWebApplicationCondition)
+          - @ConditionalOnMissingBean (types: org.springframework.data.web.PageableHandlerMethodArgumentResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       DataWebAutoConfiguration#pageableCustomizer matched:
+          - @ConditionalOnMissingBean (types: org.springframework.data.web.config.PageableHandlerMethodArgumentResolverCustomizer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       DataWebAutoConfiguration#sortCustomizer matched:
+          - @ConditionalOnMissingBean (types: org.springframework.data.web.config.SortHandlerMethodArgumentResolverCustomizer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       DataWebAutoConfiguration#springDataWebSettings matched:
+          - @ConditionalOnMissingBean (types: org.springframework.data.web.config.SpringDataWebSettings; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       DispatcherServletAutoConfiguration matched:
+          - @ConditionalOnClass found required class 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+          - found 'session' scope (OnWebApplicationCondition)
+
+       DispatcherServletAutoConfiguration.DispatcherServletConfiguration matched:
+          - @ConditionalOnClass found required class 'jakarta.servlet.ServletRegistration' (OnClassCondition)
+          - Default DispatcherServlet did not find dispatcher servlet beans (DispatcherServletAutoConfiguration.DefaultDispatcherServletCondition)
+
+       DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration matched:
+          - @ConditionalOnClass found required class 'jakarta.servlet.ServletRegistration' (OnClassCondition)
+          - DispatcherServlet Registration did not find servlet registration bean (DispatcherServletAutoConfiguration.DispatcherServletRegistrationCondition)
+
+       DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration#dispatcherServletRegistration matched:
+          - @ConditionalOnBean (names: dispatcherServlet types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean 'dispatcherServlet' (OnBeanCondition)
+
+       ErrorMvcAutoConfiguration matched:
+          - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+          - found 'session' scope (OnWebApplicationCondition)
+
+       ErrorMvcAutoConfiguration#basicErrorController matched:
+          - @ConditionalOnMissingBean (types: org.springframework.boot.webmvc.error.ErrorController; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+       ErrorMvcAutoConfiguration#errorAttributes matched:
+          - @ConditionalOnMissingBean (types: org.springframework.boot.webmvc.error.ErrorAttributes; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+       ErrorMvcAutoConfiguration.DefaultErrorViewResolverConfiguration#conventionErrorViewResolver matched:
+          - @ConditionalOnBean (types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean 'dispatcherServlet'; @ConditionalOnMissingBean (types: org.springframework.boot.webmvc.autoconfigure.error.ErrorViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration matched:
+          - @ConditionalOnBooleanProperty (spring.web.error.whitelabel.enabled=true) matched (OnPropertyCondition)
+          - ErrorTemplate Missing did not find error template view (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+
+       ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver matched:
+          - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#defaultErrorView matched:
+          - @ConditionalOnMissingBean (names: error; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       HibernateJpaAutoConfiguration matched:
+          - @ConditionalOnClass found required classes 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean', 'jakarta.persistence.EntityManager', 'org.hibernate.engine.spi.SessionImplementor' (OnClassCondition)
+
+       HibernateJpaConfiguration matched:
+          - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+       HttpEncodingAutoConfiguration matched:
+          - @ConditionalOnClass found required class 'org.springframework.web.filter.CharacterEncodingFilter' (OnClassCondition)
+          - found 'session' scope (OnWebApplicationCondition)
+          - @ConditionalOnBooleanProperty (spring.servlet.encoding.enabled=true) matched (OnPropertyCondition)
+
+       HttpEncodingAutoConfiguration#characterEncodingFilter matched:
+          - @ConditionalOnMissingBean (types: org.springframework.web.filter.CharacterEncodingFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       HttpMessageConvertersAutoConfiguration matched:
+          - @ConditionalOnClass found required class 'org.springframework.http.converter.HttpMessageConverter' (OnClassCondition)
+          - NoneNestedConditions 0 matched 1 did not; NestedCondition on HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition.ReactiveWebApplication did not find reactive web application classes (HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition)
+
+       HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration#stringHttpMessageConvertersCustomizer matched:
+          - @ConditionalOnMissingBean (types: org.springframework.http.converter.StringHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JacksonAutoConfiguration matched:
+          - @ConditionalOnClass found required class 'tools.jackson.databind.json.JsonMapper' (OnClassCondition)
+
+       JacksonAutoConfiguration#jacksonJsonMapper matched:
+          - @ConditionalOnMissingBean (types: tools.jackson.databind.json.JsonMapper; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JacksonAutoConfiguration#jsonMapperBuilder matched:
+          - @ConditionalOnMissingBean (types: tools.jackson.databind.json.JsonMapper$Builder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JacksonAutoConfiguration.JsonProblemDetailsConfiguration matched:
+          - @ConditionalOnClass found required class 'org.springframework.http.ProblemDetail' (OnClassCondition)
+
+       JacksonHttpMessageConvertersConfiguration.JacksonJsonHttpMessageConverterConfiguration matched:
+          - @ConditionalOnClass found required class 'tools.jackson.databind.json.JsonMapper' (OnClassCondition)
+          - @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=jackson) matched (OnPropertyCondition)
+          - @ConditionalOnBean (types: tools.jackson.databind.json.JsonMapper; SearchStrategy: all) found bean 'jacksonJsonMapper' (OnBeanCondition)
+
+       JacksonHttpMessageConvertersConfiguration.JacksonJsonHttpMessageConverterConfiguration#jacksonJsonHttpMessageConvertersCustomizer matched:
+          - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.JacksonJsonHttpMessageConverter ignored: org.springframework.hateoas.server.mvc.TypeConstrainedJacksonJsonHttpMessageConverter,org.springframework.data.rest.webmvc.alps.AlpsJacksonJsonHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JdbcClientAutoConfiguration matched:
+          - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate; SearchStrategy: all) found a single bean 'namedParameterJdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.simple.JdbcClient; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JdbcTemplateAutoConfiguration matched:
+          - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate' (OnClassCondition)
+          - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+       JdbcTemplateConfiguration matched:
+          - @ConditionalOnMissingBean (types: org.springframework.jdbc.core.JdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JpaBaseConfiguration#entityManagerFactory matched:
+          - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,jakarta.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JpaBaseConfiguration#entityManagerFactoryBuilder matched:
+          - @ConditionalOnMissingBean (types: org.springframework.boot.jpa.EntityManagerFactoryBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JpaBaseConfiguration#jpaVendorAdapter matched:
+          - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.JpaVendorAdapter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JpaBaseConfiguration#transactionManager matched:
+          - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JpaBaseConfiguration.JpaWebConfiguration matched:
+          - @ConditionalOnClass found required class 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+          - found 'session' scope (OnWebApplicationCondition)
+          - @ConditionalOnBooleanProperty (spring.jpa.open-in-view=true) matched (OnPropertyCondition)
+          - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor,org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JpaBaseConfiguration.PersistenceManagedTypesConfiguration matched:
+          - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,jakarta.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JpaBaseConfiguration.PersistenceManagedTypesConfiguration#persistenceManagedTypes matched:
+          - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.persistenceunit.PersistenceManagedTypes; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       JtaAutoConfiguration matched:
+          - @ConditionalOnClass found required class 'jakarta.transaction.Transaction' (OnClassCondition)
+          - @ConditionalOnBooleanProperty (spring.jta.enabled=true) matched (OnPropertyCondition)
+
+       LifecycleAutoConfiguration#defaultLifecycleProcessor matched:
+          - @ConditionalOnMissingBean (names: lifecycleProcessor; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+       MessagePublisherConfiguration#messagePublisher matched:
+          - @ConditionalOnMissingBean (types: io.github.edmaputra.scheduler.adapter.out.messaging.MessagePublisher; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       MockMessageEventListener matched:
+          - @ConditionalOnProperty (scheduler.messaging.inbound.provider=mock) matched (OnPropertyCondition)
+
+       MultipartAutoConfiguration matched:
+          - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.multipart.support.StandardServletMultipartResolver', 'jakarta.servlet.MultipartConfigElement' (OnClassCondition)
+          - found 'session' scope (OnWebApplicationCondition)
+          - @ConditionalOnBooleanProperty (spring.servlet.multipart.enabled=true) matched (OnPropertyCondition)
+
+       MultipartAutoConfiguration#multipartConfigElement matched:
+          - @ConditionalOnMissingBean (types: jakarta.servlet.MultipartConfigElement; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       MultipartAutoConfiguration#multipartResolver matched:
+          - @ConditionalOnMissingBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       NamedParameterJdbcTemplateConfiguration matched:
+          - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.JdbcTemplate; SearchStrategy: all) found a single bean 'jdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       PersistenceExceptionTranslationAutoConfiguration matched:
+          - @ConditionalOnClass found required class 'org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor' (OnClassCondition)
+
+       PersistenceExceptionTranslationAutoConfiguration#persistenceExceptionTranslationPostProcessor matched:
+          - @ConditionalOnBooleanProperty (spring.persistence.exceptiontranslation.enabled=true) matched (OnPropertyCondition)
+          - @ConditionalOnMissingBean (types: org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer matched:
+          - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+       SslAutoConfiguration#sslBundleRegistry matched:
+          - @ConditionalOnMissingBean (types: org.springframework.boot.ssl.SslBundleRegistry,org.springframework.boot.ssl.SslBundles; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       TaskExecutionAutoConfiguration matched:
+          - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor' (OnClassCondition)
+
+       TaskExecutorConfigurations.AsyncConfigurerConfiguration matched:
+          - @ConditionalOnMissingBean (types: org.springframework.scheduling.annotation.AsyncConfigurer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       TaskExecutorConfigurations.SimpleAsyncTaskExecutorBuilderConfiguration#simpleAsyncTaskExecutorBuilder matched:
+          - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+          - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       TaskExecutorConfigurations.TaskExecutorConfiguration matched:
+          - AnyNestedCondition 1 matched 1 did not; NestedCondition on TaskExecutorConfigurations.OnExecutorCondition.ModelCondition @ConditionalOnProperty (spring.task.execution.mode=force) did not find property 'spring.task.execution.mode'; NestedCondition on TaskExecutorConfigurations.OnExecutorCondition.ExecutorBeanCondition @ConditionalOnMissingBean (types: java.util.concurrent.Executor; SearchStrategy: all) did not find any beans (TaskExecutorConfigurations.OnExecutorCondition)
+
+       TaskExecutorConfigurations.TaskExecutorConfiguration#applicationTaskExecutor matched:
+          - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+       TaskExecutorConfigurations.ThreadPoolTaskExecutorBuilderConfiguration#threadPoolTaskExecutorBuilder matched:
+          - @ConditionalOnMissingBean (types: org.springframework.boot.task.ThreadPoolTaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       TaskSchedulingAutoConfiguration matched:
+          - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler' (OnClassCondition)
+
+       TaskSchedulingAutoConfiguration#scheduledBeanLazyInitializationExcludeFilter matched:
+          - @ConditionalOnBean (names: org.springframework.scheduling.config.internalScheduledAnnotationProcessor; SearchStrategy: all) found bean 'org.springframework.scheduling.config.internalScheduledAnnotationProcessor' (OnBeanCondition)
+
+       TaskSchedulingConfigurations.SimpleAsyncTaskSchedulerBuilderConfiguration#simpleAsyncTaskSchedulerBuilder matched:
+          - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+          - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       TaskSchedulingConfigurations.TaskSchedulerConfiguration matched:
+          - @ConditionalOnBean (names: org.springframework.scheduling.config.internalScheduledAnnotationProcessor; SearchStrategy: all) found bean 'org.springframework.scheduling.config.internalScheduledAnnotationProcessor'; @ConditionalOnMissingBean (types: org.springframework.scheduling.TaskScheduler,java.util.concurrent.ScheduledExecutorService; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       TaskSchedulingConfigurations.TaskSchedulerConfiguration#taskScheduler matched:
+          - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+       TaskSchedulingConfigurations.ThreadPoolTaskSchedulerBuilderConfiguration#threadPoolTaskSchedulerBuilder matched:
+          - @ConditionalOnMissingBean (types: org.springframework.boot.task.ThreadPoolTaskSchedulerBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       TomcatServletWebServerAutoConfiguration matched:
+          - @ConditionalOnClass found required classes 'jakarta.servlet.ServletRequest', 'org.apache.catalina.startup.Tomcat', 'org.apache.coyote.UpgradeProtocol', 'org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory' (OnClassCondition)
+          - found 'session' scope (OnWebApplicationCondition)
+
+       TomcatServletWebServerAutoConfiguration#tomcatServletWebServerFactory matched:
+          - @ConditionalOnMissingBean (types: org.springframework.boot.web.server.servlet.ServletWebServerFactory; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+       TransactionAutoConfiguration matched:
+          - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+       TransactionAutoConfiguration.EnableTransactionManagementConfiguration matched:
+          - @ConditionalOnBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found bean 'transactionManager'; @ConditionalOnMissingBean (types: org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       TransactionAutoConfiguration.EnableTransactionManagementConfiguration.CglibAutoProxyConfiguration matched:
+          - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+       TransactionAutoConfiguration.TransactionTemplateConfiguration matched:
+          - @ConditionalOnSingleCandidate (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) found a single bean 'transactionManager' (OnBeanCondition)
+
+       TransactionAutoConfiguration.TransactionTemplateConfiguration#transactionTemplate matched:
+          - @ConditionalOnMissingBean (types: org.springframework.transaction.support.TransactionOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       TransactionManagerCustomizationAutoConfiguration matched:
+          - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+       TransactionManagerCustomizationAutoConfiguration#platformTransactionManagerCustomizers matched:
+          - @ConditionalOnMissingBean (types: org.springframework.boot.transaction.autoconfigure.TransactionManagerCustomizers; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       WebMvcAutoConfiguration matched:
+          - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+          - found 'session' scope (OnWebApplicationCondition)
+          - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       WebMvcAutoConfiguration#formContentFilter matched:
+          - @ConditionalOnBooleanProperty (spring.mvc.formcontent.filter.enabled=true) matched (OnPropertyCondition)
+          - @ConditionalOnMissingBean (types: org.springframework.web.filter.FormContentFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       WebMvcAutoConfiguration.EnableWebMvcConfiguration#flashMapManager matched:
+          - @ConditionalOnMissingBean (names: flashMapManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       WebMvcAutoConfiguration.EnableWebMvcConfiguration#localeResolver matched:
+          - @ConditionalOnMissingBean (names: localeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       WebMvcAutoConfiguration.EnableWebMvcConfiguration#viewNameTranslator matched:
+          - @ConditionalOnMissingBean (names: viewNameTranslator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver matched:
+          - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextFilter matched:
+          - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener,org.springframework.web.filter.RequestContextFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver matched:
+          - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found beans 'defaultViewResolver', 'beanNameViewResolver', 'mvcViewResolver'; @ConditionalOnMissingBean (names: viewResolver types: org.springframework.web.servlet.view.ContentNegotiatingViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+    Negative matches:
+    -----------------
+
+       AopAutoConfiguration.AspectJAutoProxyingConfiguration.JdkDynamicAutoProxyConfiguration:
+          Did not match:
+             - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=false) did not find property 'spring.aop.proxy-target-class' (OnPropertyCondition)
+
+       AopAutoConfiguration.ClassProxyingConfiguration:
+          Did not match:
+             - @ConditionalOnMissingClass found unwanted class 'org.aspectj.weaver.Advice' (OnClassCondition)
+
+       DataJpaRepositoriesAutoConfiguration#entityManagerFactoryBootstrapExecutorCustomizer:
+          Did not match:
+             - AnyNestedCondition 0 matched 2 did not; NestedCondition on DataJpaRepositoriesAutoConfiguration.BootstrapExecutorCondition.LazyBootstrapMode @ConditionalOnProperty (spring.data.jpa.repositories.bootstrap-mode=lazy) did not find property 'spring.data.jpa.repositories.bootstrap-mode'; NestedCondition on DataJpaRepositoriesAutoConfiguration.BootstrapExecutorCondition.DeferredBootstrapMode @ConditionalOnProperty (spring.data.jpa.repositories.bootstrap-mode=deferred) did not find property 'spring.data.jpa.repositories.bootstrap-mode' (DataJpaRepositoriesAutoConfiguration.BootstrapExecutorCondition)
+
+       DataRepositoryMetricsAutoConfiguration:
+          Did not match:
+             - @ConditionalOnBean did not find required type 'io.micrometer.core.instrument.MeterRegistry' (OnBeanCondition)
+
+       DataSourceAutoConfiguration.EmbeddedDatabaseConfiguration:
+          Did not match:
+             - EmbeddedDataSource spring.datasource.url is set (DataSourceAutoConfiguration.EmbeddedDatabaseCondition)
+
+       DataSourceCheckpointRestoreConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.crac.Resource' (OnClassCondition)
+
+       DataSourceConfiguration.Dbcp2:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+       DataSourceConfiguration.Generic:
+          Did not match:
+             - @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (OnPropertyCondition)
+
+       DataSourceConfiguration.OracleUcp:
+          Did not match:
+             - @ConditionalOnClass did not find required classes 'oracle.ucp.jdbc.PoolDataSourceImpl', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+       DataSourceConfiguration.Tomcat:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+       DataSourceHealthContributorAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.springframework.boot.health.autoconfigure.contributor.ConditionalOnEnabledHealthIndicator' (OnClassCondition)
+
+       DataSourceJmxConfiguration:
+          Did not match:
+             - @ConditionalOnBooleanProperty (spring.jmx.enabled=true) found different value in property 'spring.jmx.enabled' (OnPropertyCondition)
+
+       DataSourcePoolMetadataProvidersConfiguration.CommonsDbcp2PoolDataSourceMetadataProviderConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+       DataSourcePoolMetadataProvidersConfiguration.OracleUcpPoolDataSourceMetadataProviderConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required classes 'oracle.ucp.jdbc.PoolDataSource', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+       DataSourcePoolMetadataProvidersConfiguration.TomcatDataSourcePoolMetadataProviderConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+       DataSourcePoolMetricsAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.MeterRegistry' (OnClassCondition)
+
+       DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration#transactionManager:
+          Did not match:
+             - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found beans of type 'org.springframework.transaction.TransactionManager' transactionManager (OnBeanCondition)
+
+       DispatcherServletAutoConfiguration.DispatcherServletConfiguration#multipartResolver:
+          Did not match:
+             - @ConditionalOnBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) did not find any beans of type org.springframework.web.multipart.MultipartResolver (OnBeanCondition)
+
+       GsonHttpMessageConvertersConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'com.google.gson.Gson' (OnClassCondition)
+
+       HibernateMetricsAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.MeterRegistry' (OnClassCondition)
+
+       Jackson2HttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'com.fasterxml.jackson.databind.ObjectMapper' (OnClassCondition)
+
+       Jackson2HttpMessageConvertersConfiguration.MappingJackson2XmlHttpMessageConverterConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+       JacksonAutoConfiguration.CborConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.cbor.CBORMapper' (OnClassCondition)
+
+       JacksonAutoConfiguration.XmlConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+       JacksonHttpMessageConvertersConfiguration.JacksonXmlHttpMessageConverterConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+       JmxAutoConfiguration:
+          Did not match:
+             - @ConditionalOnBooleanProperty (spring.jmx.enabled=true) found different value in property 'spring.jmx.enabled' (OnPropertyCondition)
+          Matched:
+             - @ConditionalOnClass found required class 'org.springframework.jmx.export.MBeanExporter' (OnClassCondition)
+
+       JndiDataSourceAutoConfiguration:
+          Did not match:
+             - @ConditionalOnProperty (spring.datasource.jndi-name) did not find property 'spring.datasource.jndi-name' (OnPropertyCondition)
+          Matched:
+             - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+
+       JndiJtaConfiguration:
+          Did not match:
+             - @ConditionalOnJndi JNDI environment is not available (OnJndiCondition)
+          Matched:
+             - @ConditionalOnClass found required class 'org.springframework.transaction.jta.JtaTransactionManager' (OnClassCondition)
+
+       JsonbHttpMessageConvertersConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'jakarta.json.bind.Jsonb' (OnClassCondition)
+
+       KafkaMessageEventListener:
+          Did not match:
+             - @ConditionalOnProperty (scheduler.messaging.inbound.provider=kafka) found different value in property 'scheduler.messaging.inbound.provider' (OnPropertyCondition)
+
+       KotlinSerializationHttpMessageConvertersConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required classes 'kotlinx.serialization.Serializable', 'kotlinx.serialization.json.Json' (OnClassCondition)
+
+       LiquibaseAutoConfiguration:
+          Did not match:
+             - @ConditionalOnBooleanProperty (spring.liquibase.enabled=true) found different value in property 'spring.liquibase.enabled' (OnPropertyCondition)
+          Matched:
+             - @ConditionalOnClass found required classes 'liquibase.integration.spring.SpringLiquibase', 'liquibase.change.DatabaseChange' (OnClassCondition)
+
+       LiquibaseEndpointAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+
+       MessageSourceAutoConfiguration:
+          Did not match:
+             - ResourceBundle did not find bundle with basename messages (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+       ProjectInfoAutoConfiguration#buildProperties:
+          Did not match:
+             - @ConditionalOnResource did not find resource '${spring.info.build.location:classpath:META-INF/build-info.properties}' (OnResourceCondition)
+
+       ProjectInfoAutoConfiguration#gitProperties:
+          Did not match:
+             - GitResource did not find git info at classpath:git.properties (ProjectInfoAutoConfiguration.GitResourceAvailableCondition)
+
+       QuartzEndpointAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+
+       ServletHttpExchangesAutoConfiguration:
+          Did not match:
+             - @ConditionalOnBean did not find required type 'org.springframework.boot.actuate.web.exchanges.HttpExchangeRepository' (OnBeanCondition)
+
+       ServletManagementContextAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointProperties' (OnClassCondition)
+
+       ServletMappingsAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+
+       ServletWebServerConfiguration#forwardedHeaderFilter:
+          Did not match:
+             - @ConditionalOnProperty (server.forward-headers-strategy=framework) did not find property 'server.forward-headers-strategy' (OnPropertyCondition)
+
+       SpringApplicationAdminJmxAutoConfiguration:
+          Did not match:
+             - @ConditionalOnBooleanProperty (spring.application.admin.enabled=true) did not find property 'spring.application.admin.enabled' (OnPropertyCondition)
+
+       TaskExecutorConfigurations.AsyncConfigurerWrapperConfiguration:
+          Did not match:
+             - @ConditionalOnBean (types: org.springframework.scheduling.annotation.AsyncConfigurer; SearchStrategy: all) did not find any beans of type org.springframework.scheduling.annotation.AsyncConfigurer (OnBeanCondition)
+
+       TaskExecutorConfigurations.SimpleAsyncTaskExecutorBuilderConfiguration#simpleAsyncTaskExecutorBuilderVirtualThreads:
+          Did not match:
+             - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder; SearchStrategy: all) found beans of type 'org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder' simpleAsyncTaskExecutorBuilder (OnBeanCondition)
+
+       TaskExecutorConfigurations.TaskExecutorConfiguration#applicationTaskExecutorVirtualThreads:
+          Did not match:
+             - @ConditionalOnThreading did not find VIRTUAL (OnThreadingCondition)
+
+       TaskSchedulingConfigurations.SimpleAsyncTaskSchedulerBuilderConfiguration#simpleAsyncTaskSchedulerBuilderVirtualThreads:
+          Did not match:
+             - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder; SearchStrategy: all) found beans of type 'org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder' simpleAsyncTaskSchedulerBuilder (OnBeanCondition)
+
+       TaskSchedulingConfigurations.TaskSchedulerConfiguration#taskSchedulerVirtualThreads:
+          Did not match:
+             - @ConditionalOnThreading did not find VIRTUAL (OnThreadingCondition)
+
+       TomcatMetricsAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.binder.tomcat.TomcatMetrics' (OnClassCondition)
+
+       TomcatReactiveManagementContextAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextFactory' (OnClassCondition)
+
+       TomcatReactiveWebServerAutoConfiguration:
+          Did not match:
+             - @ConditionalOnWebApplication did not find reactive web application classes (OnWebApplicationCondition)
+
+       TomcatServletManagementContextAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextFactory' (OnClassCondition)
+
+       TomcatServletWebServerAutoConfiguration#tomcatForwardedHeaderFilterCustomizer:
+          Did not match:
+             - @ConditionalOnProperty (server.forward-headers-strategy=framework) did not find property 'server.forward-headers-strategy' (OnPropertyCondition)
+
+       TomcatWebServerConfiguration:
+          Did not match:
+             - Application is deployed as a WAR file. (OnWarDeploymentCondition)
+
+       TransactionAutoConfiguration#transactionalOperator:
+          Did not match:
+             - @ConditionalOnSingleCandidate (types: org.springframework.transaction.ReactiveTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+       TransactionAutoConfiguration.AspectJTransactionManagementConfiguration:
+          Did not match:
+             - @ConditionalOnBean (types: org.springframework.transaction.aspectj.AbstractTransactionAspect; SearchStrategy: all) did not find any beans of type org.springframework.transaction.aspectj.AbstractTransactionAspect (OnBeanCondition)
+
+       TransactionAutoConfiguration.EnableTransactionManagementConfiguration.JdkDynamicAutoProxyConfiguration:
+          Did not match:
+             - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=false) did not find property 'spring.aop.proxy-target-class' (OnPropertyCondition)
+
+       WebMvcAutoConfiguration#hiddenHttpMethodFilter:
+          Did not match:
+             - @ConditionalOnBooleanProperty (spring.mvc.hiddenmethod.filter.enabled=true) did not find property 'spring.mvc.hiddenmethod.filter.enabled' (OnPropertyCondition)
+
+       WebMvcAutoConfiguration.ProblemDetailsErrorHandlingConfiguration:
+          Did not match:
+             - @ConditionalOnBooleanProperty (spring.mvc.problemdetails.enabled=true) did not find property 'spring.mvc.problemdetails.enabled' (OnPropertyCondition)
+
+       WebMvcAutoConfiguration.ResourceChainCustomizerConfiguration:
+          Did not match:
+             - @ConditionalOnEnabledResourceChain did not find class org.webjars.WebJarVersionLocator (OnEnabledResourceChainCondition)
+
+       WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver:
+          Did not match:
+             - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found beans of type 'org.springframework.web.servlet.view.BeanNameViewResolver' beanNameViewResolver (OnBeanCondition)
+
+       WebMvcHealthEndpointExtensionAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.springframework.boot.health.actuate.endpoint.HealthEndpoint' (OnClassCondition)
+
+       WebMvcMappingsAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+
+       WebMvcObservationAutoConfiguration:
+          Did not match:
+             - @ConditionalOnClass did not find required class 'org.springframework.boot.micrometer.observation.autoconfigure.ObservationProperties' (OnClassCondition)
+
+       XADataSourceAutoConfiguration:
+          Did not match:
+             - @ConditionalOnBean (types: org.springframework.boot.jdbc.XADataSourceWrapper; SearchStrategy: all) did not find any beans of type org.springframework.boot.jdbc.XADataSourceWrapper (OnBeanCondition)
+          Matched:
+             - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'jakarta.transaction.TransactionManager', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+
+
+    Exclusions:
+    -----------
+
+        org.springframework.boot.quartz.autoconfigure.QuartzAutoConfiguration
+
+
+    Unconditional classes:
+    ----------------------
+
+        org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+
+        org.springframework.boot.autoconfigure.ssl.SslAutoConfiguration
+
+        org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration
+
+        org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+
+        org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+
+        org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+
+
+
+
+SchedulerApplicationTests STANDARD_OUT
+    2026-04-17T11:03:40.187+07:00  INFO 40939 --- [scheduler] [    Test worker] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+    Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+    2026-04-17T11:03:40.195+07:00 ERROR 40939 --- [scheduler] [    Test worker] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+    ***************************
+    APPLICATION FAILED TO START
+    ***************************
+
+    Description:
+
+    Parameter 0 of constructor in io.github.edmaputra.scheduler.adapter.out.scheduler.QuartzJobSchedulerAdapter required a bean of type 'org.quartz.Scheduler' that could not be found.
+
+
+    Action:
+
+    Consider defining a bean of type 'org.quartz.Scheduler' in your configuration.
+
+    2026-04-17T11:03:40.196+07:00  WARN 40939 --- [scheduler] [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [io.github.edmaputra.scheduler.SchedulerApplicationTests@346d8002]
+
+    java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@15d2c2ca testClass = io.github.edmaputra.scheduler.SchedulerApplicationTests, locations = [], classes = [io.github.edmaputra.scheduler.SchedulerApplication], contextInitializerClasses = [], activeProfiles = ["test"], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@88a8218, org.springframework.boot.test.context.PropertyMappingContextCustomizer@0, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@73386d72, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1929425f, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.web.server.context.SpringBootTestRandomPortContextCustomizer@3003697, org.springframework.boot.test.context.SpringBootTestAnnotation@e415c7a], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+    	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.lambda$loadContext$0(DefaultCacheAwareContextLoaderDelegate.java:195) ~[spring-test-7.0.3.jar:7.0.3]
+    	at org.springframework.test.context.cache.DefaultContextCache.put(DefaultContextCache.java:214) ~[spring-test-7.0.3.jar:7.0.3]
+    	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:160) ~[spring-test-7.0.3.jar:7.0.3]
+    	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:128) ~[spring-test-7.0.3.jar:7.0.3]
+    	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:200) ~[spring-test-7.0.3.jar:7.0.3]
+    	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:139) ~[spring-test-7.0.3.jar:7.0.3]
+    	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260) ~[spring-test-7.0.3.jar:7.0.3]
+    	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:205) ~[spring-test-7.0.3.jar:7.0.3]
+    	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$1(ClassBasedTestDescriptor.java:423) ~[junit-jupiter-engine-6.0.2.jar:6.0.2]
+    	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:428) ~[junit-jupiter-engine-6.0.2.jar:6.0.2]
+    	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$0(ClassBasedTestDescriptor.java:422) ~[junit-jupiter-engine-6.0.2.jar:6.0.2]
+    	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186) ~[na:na]
+    	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214) ~[na:na]
+    	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197) ~[na:na]
+    	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214) ~[na:na]
+    	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716) ~[na:na]
+    	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570) ~[na:na]
+    	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560) ~[na:na]
+    	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153) ~[na:na]
+    	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176) ~[na:na]
+    	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265) ~[na:na]
+    	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:632) ~[na:na]
+    	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:422) ~[junit-jupiter-engine-6.0.2.jar:6.0.2]
+    	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$0(ClassBasedTestDescriptor.java:334) ~[junit-jupiter-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:333) ~[junit-jupiter-engine-6.0.2.jar:6.0.2]
+    	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$1(ClassBasedTestDescriptor.java:322) ~[junit-jupiter-engine-6.0.2.jar:6.0.2]
+    	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+    	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$0(ClassBasedTestDescriptor.java:321) ~[junit-jupiter-engine-6.0.2.jar:6.0.2]
+    	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:27) ~[junit-jupiter-engine-6.0.2.jar:6.0.2]
+    	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:127) ~[junit-jupiter-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:126) ~[junit-jupiter-engine-6.0.2.jar:6.0.2]
+    	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:70) ~[junit-jupiter-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$0(NodeTestTask.java:144) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:144) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:110) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) ~[na:na]
+    	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) ~[na:na]
+    	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:36) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:52) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:58) ~[junit-platform-engine-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:93) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:48) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$0(InterceptingLauncher.java:41) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:40) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:48) ~[junit-platform-launcher-6.0.2.jar:6.0.2]
+    	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestDefinitionProcessor$CollectThenExecuteTestDefinitionConsumer.processAllTestClasses(JUnitPlatformTestDefinitionProcessor.java:172) ~[na:na]
+    	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestDefinitionProcessor$CollectThenExecuteTestDefinitionConsumer.access$000(JUnitPlatformTestDefinitionProcessor.java:121) ~[na:na]
+    	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestDefinitionProcessor.stop(JUnitPlatformTestDefinitionProcessor.java:114) ~[na:na]
+    	at org.gradle.api.internal.tasks.testing.SuiteTestDefinitionProcessor.stop(SuiteTestDefinitionProcessor.java:64) ~[na:na]
+    	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+    	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+    	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77) ~[na:na]
+    	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28) ~[na:na]
+    	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19) ~[na:na]
+    	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[na:na]
+    	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88) ~[na:na]
+    	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source) ~[na:na]
+    	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:195) ~[na:na]
+    	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126) ~[na:na]
+    	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103) ~[na:na]
+    	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63) ~[na:na]
+    	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[na:na]
+    	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122) ~[na:na]
+    	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72) ~[na:na]
+    	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:na]
+    	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:na]
+    Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mockMessageEventListener' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/adapter/in/messaging/MockMessageEventListener.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jobScheduleEventService' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/application/service/JobScheduleEventService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jobManagementService' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/application/service/JobManagementService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'quartzJobSchedulerAdapter' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/adapter/out/scheduler/QuartzJobSchedulerAdapter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.quartz.Scheduler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+    	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.3.jar:7.0.3]
+    	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.3.jar:7.0.3]
+    	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.2.jar:4.0.2]
+    	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.2.jar:4.0.2]
+    	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.2.jar:4.0.2]
+    	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$2(SpringBootContextLoader.java:156) ~[spring-boot-test-4.0.2.jar:4.0.2]
+    	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-7.0.3.jar:7.0.3]
+    	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-7.0.3.jar:7.0.3]
+    	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1465) ~[spring-boot-4.0.2.jar:4.0.2]
+    	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:605) ~[spring-boot-test-4.0.2.jar:4.0.2]
+    	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:156) ~[spring-boot-test-4.0.2.jar:4.0.2]
+    	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:115) ~[spring-boot-test-4.0.2.jar:4.0.2]
+    	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:247) ~[spring-test-7.0.3.jar:7.0.3]
+    	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.lambda$loadContext$0(DefaultCacheAwareContextLoaderDelegate.java:167) ~[spring-test-7.0.3.jar:7.0.3]
+    	... 96 common frames omitted
+    Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobScheduleEventService' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/application/service/JobScheduleEventService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jobManagementService' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/application/service/JobManagementService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'quartzJobSchedulerAdapter' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/adapter/out/scheduler/QuartzJobSchedulerAdapter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.quartz.Scheduler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+    	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.3.jar:7.0.3]
+    	... 122 common frames omitted
+    Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobManagementService' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/application/service/JobManagementService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'quartzJobSchedulerAdapter' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/adapter/out/scheduler/QuartzJobSchedulerAdapter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.quartz.Scheduler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+    	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.3.jar:7.0.3]
+    	... 136 common frames omitted
+    Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'quartzJobSchedulerAdapter' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/adapter/out/scheduler/QuartzJobSchedulerAdapter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.quartz.Scheduler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+    	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.3.jar:7.0.3]
+    	... 150 common frames omitted
+    Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.quartz.Scheduler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+    	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:2297) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1725) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.3.jar:7.0.3]
+    	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.3.jar:7.0.3]
+    	... 164 common frames omitted
+
+
+SchedulerApplicationTests > contextLoads() FAILED
+    java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@15d2c2ca testClass = io.github.edmaputra.scheduler.SchedulerApplicationTests, locations = [], classes = [io.github.edmaputra.scheduler.SchedulerApplication], contextInitializerClasses = [], activeProfiles = ["test"], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@88a8218, org.springframework.boot.test.context.PropertyMappingContextCustomizer@0, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@73386d72, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1929425f, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.web.server.context.SpringBootTestRandomPortContextCustomizer@3003697, org.springframework.boot.test.context.SpringBootTestAnnotation@e415c7a], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+        at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.lambda$loadContext$0(DefaultCacheAwareContextLoaderDelegate.java:195)
+        at org.springframework.test.context.cache.DefaultContextCache.put(DefaultContextCache.java:214)
+        at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:160)
+        at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:128)
+        at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:200)
+        at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:139)
+        at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+        at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:205)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+        at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+        at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+        at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+        at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+        at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+        at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+        at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:632)
+        at java.base/java.util.Optional.orElseGet(Optional.java:364)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+        Caused by:
+        org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mockMessageEventListener' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/adapter/in/messaging/MockMessageEventListener.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jobScheduleEventService' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/application/service/JobScheduleEventService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jobManagementService' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/application/service/JobManagementService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'quartzJobSchedulerAdapter' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/adapter/out/scheduler/QuartzJobSchedulerAdapter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.quartz.Scheduler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+            at app//org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+            at app//org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+            at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382)
+            at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221)
+            at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+            at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+            at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+            at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+            at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+            at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+            at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218)
+            at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184)
+            at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121)
+            at app//org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993)
+            at app//org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620)
+            at app//org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+            at app//org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+            at app//org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+            at app//org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$2(SpringBootContextLoader.java:156)
+            at app//org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+            at app//org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+            at app//org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1465)
+            at app//org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:605)
+            at app//org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:156)
+            at app//org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:115)
+            at app//org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:247)
+            at app//org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.lambda$loadContext$0(DefaultCacheAwareContextLoaderDelegate.java:167)
+            ... 21 more
+
+            Caused by:
+            org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobScheduleEventService' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/application/service/JobScheduleEventService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'jobManagementService' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/application/service/JobManagementService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'quartzJobSchedulerAdapter' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/adapter/out/scheduler/QuartzJobSchedulerAdapter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.quartz.Scheduler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+                at app//org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+                at app//org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+                at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382)
+                at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221)
+                at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+                at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+                at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+                at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+                at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+                at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+                at app//org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+                at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+                at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+                at app//org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)
+                at app//org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+                ... 47 more
+
+                Caused by:
+                org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobManagementService' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/application/service/JobManagementService.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'quartzJobSchedulerAdapter' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/adapter/out/scheduler/QuartzJobSchedulerAdapter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.quartz.Scheduler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+                    at app//org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+                    at app//org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+                    at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382)
+                    at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221)
+                    at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+                    at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+                    at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+                    at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+                    at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+                    at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+                    at app//org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+                    at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+                    at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+                    at app//org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)
+                    at app//org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+                    ... 61 more
+
+                    Caused by:
+                    org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'quartzJobSchedulerAdapter' defined in file [/Users/bangun.saputra/Bangun/Projects/scheduler/build/classes/java/main/io/github/edmaputra/scheduler/adapter/out/scheduler/QuartzJobSchedulerAdapter.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'org.quartz.Scheduler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+                        at app//org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+                        at app//org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+                        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382)
+                        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221)
+                        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+                        at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+                        at app//org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+                        at app//org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+                        at app//org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+                        at app//org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+                        at app//org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)
+                        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762)
+                        at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+                        at app//org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)
+                        at app//org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+                        ... 75 more
+
+                        Caused by:
+                        org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.quartz.Scheduler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+                            at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:2297)
+                            at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1725)
+                            at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651)
+                            at app//org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)
+                            at app//org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+                            ... 89 more
+
+KafkaMessageEventListenerTest > shouldDelegateToUseCaseWithSameContractMethod() STANDARD_ERROR
+    Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+    WARNING: A Java agent has been loaded dynamically (/Users/bangun.saputra/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.8/f09415827a71be7ed621c7bd02550678f28bc81c/byte-buddy-agent-1.17.8.jar)
+    WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+    WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+    WARNING: Dynamic loading of agents will be disallowed by default in a future release
+
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Gradle Test Executor 3 finished executing tests.
+2026-04-17T11:03:41.512+07:00  INFO 40939 --- [scheduler] [ionShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+
+> Task :test
+
+KafkaMessageEventListenerTest > shouldDelegateToUseCaseWithSameContractMethod() STANDARD_OUT
+    2026-04-17T11:03:40.487+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.a.i.m.KafkaMessageEventListener  : Kafka inbound adapter received job schedule event for 'kafka-contract'
+
+MockMessageEventListenerTest > shouldDelegateToUseCaseWithSameContractMethod() STANDARD_OUT
+    2026-04-17T11:03:40.510+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.a.i.m.MockMessageEventListener   : Mock inbound adapter received job schedule event for 'mock-contract'
+
+JobScheduleEventServiceTest > shouldHandleCronEvent() STANDARD_OUT
+    2026-04-17T11:03:40.528+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.a.s.JobScheduleEventService      : Handling job schedule event for job 'cron-from-message' of type CRON
+
+JobScheduleEventServiceTest > shouldHandleDelayedEvent() STANDARD_OUT
+    2026-04-17T11:03:40.531+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.a.s.JobScheduleEventService      : Handling job schedule event for job 'delayed-from-message' of type DELAYED
+
+JobApiIntegrationTest STANDARD_OUT
+    2026-04-17T11:03:40.545+07:00  INFO 40939 --- [scheduler] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration io.github.edmaputra.scheduler.SchedulerApplication for test class io.github.edmaputra.scheduler.integration.JobApiIntegrationTest
+
+      .   ____          _            __ _ _
+     /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+    ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+     \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+      '  |____| .__|_| |_|_| |_\__, | / / / /
+     =========|_|==============|___/=/_/_/_/
+
+     :: Spring Boot ::                (v4.0.2)
+
+    2026-04-17T11:03:40.557+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.i.JobApiIntegrationTest          : Starting JobApiIntegrationTest using Java 25.0.2 with PID 40939 (started by bangun.saputra in /Users/bangun.saputra/Bangun/Projects/scheduler)
+    2026-04-17T11:03:40.557+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.i.JobApiIntegrationTest          : The following 1 profile is active: "test"
+    2026-04-17T11:03:40.618+07:00  INFO 40939 --- [scheduler] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+    2026-04-17T11:03:40.632+07:00  INFO 40939 --- [scheduler] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 2 JPA repository interfaces.
+    2026-04-17T11:03:40.722+07:00  INFO 40939 --- [scheduler] [    Test worker] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+    2026-04-17T11:03:40.727+07:00  INFO 40939 --- [scheduler] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+    2026-04-17T11:03:40.727+07:00  INFO 40939 --- [scheduler] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+    2026-04-17T11:03:40.746+07:00  INFO 40939 --- [scheduler] [    Test worker] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 188 ms
+    2026-04-17T11:03:40.779+07:00  INFO 40939 --- [scheduler] [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+    2026-04-17T11:03:40.786+07:00  INFO 40939 --- [scheduler] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+    2026-04-17T11:03:40.786+07:00  INFO 40939 --- [scheduler] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+    2026-04-17T11:03:40.787+07:00  INFO 40939 --- [scheduler] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:scheduler_test user=SA
+    2026-04-17T11:03:40.787+07:00  INFO 40939 --- [scheduler] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+    2026-04-17T11:03:40.787+07:00  WARN 40939 --- [scheduler] [    Test worker] org.hibernate.orm.core                   : HHH000511: The 2.4.240 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 13.0.0. Check the community dialects project for available legacy versions.
+    2026-04-17T11:03:40.787+07:00  WARN 40939 --- [scheduler] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+    2026-04-17T11:03:40.787+07:00  INFO 40939 --- [scheduler] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+    	Database JDBC URL [jdbc:h2:mem:scheduler_test]
+    	Database driver: H2 JDBC Driver
+    	Database dialect: PostgreSQLDialect
+    	Database version: 2.4.240
+    	Default catalog/schema: SCHEDULER_TEST/PUBLIC
+    	Autocommit mode: undefined/unknown
+    	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+    	JDBC fetch size: 100
+    	Pool: DataSourceConnectionProvider
+    	Minimum pool size: undefined/unknown
+    	Maximum pool size: undefined/unknown
+    2026-04-17T11:03:40.799+07:00  INFO 40939 --- [scheduler] [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+    2026-04-17T11:03:40.802+07:00  INFO 40939 --- [scheduler] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+    2026-04-17T11:03:40.908+07:00  WARN 40939 --- [scheduler] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+    2026-04-17T11:03:41.031+07:00  INFO 40939 --- [scheduler] [    Test worker] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 57329 (http) with context path '/'
+    2026-04-17T11:03:41.034+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.i.JobApiIntegrationTest          : Started JobApiIntegrationTest in 0.487 seconds (process running for 2.798)
+
+JobApiIntegrationTest > shouldFilterJobsByType() STANDARD_OUT
+    2026-04-17T11:03:41.138+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+    2026-04-17T11:03:41.139+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+    2026-04-17T11:03:41.139+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+    2026-04-17T11:03:41.152+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-1] i.g.e.s.adapter.in.web.JobController     : Received request to get all jobs (status: null, type: CRON)
+
+JobApiIntegrationTest > shouldStopJob() STANDARD_OUT
+    2026-04-17T11:03:41.363+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-2] i.g.e.s.adapter.in.web.JobController     : Received request to create CRON job: Job to Stop
+    2026-04-17T11:03:41.364+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-2] i.g.e.s.a.service.JobManagementService   : Creating CRON job: Job to Stop
+    2026-04-17T11:03:41.392+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-3] i.g.e.s.adapter.in.web.JobController     : Received request to stop job: c0c6befb-aa27-4b57-a8e3-4d207538ed84
+    2026-04-17T11:03:41.396+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-3] i.g.e.s.a.service.JobManagementService   : Job stopped: Job to Stop (ID: c0c6befb-aa27-4b57-a8e3-4d207538ed84)
+    2026-04-17T11:03:41.399+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-4] i.g.e.s.adapter.in.web.JobController     : Received request to get job: c0c6befb-aa27-4b57-a8e3-4d207538ed84
+
+JobApiIntegrationTest > shouldGetJobById() STANDARD_OUT
+    2026-04-17T11:03:41.405+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-5] i.g.e.s.adapter.in.web.JobController     : Received request to create CRON job: Job to Retrieve
+    2026-04-17T11:03:41.405+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-5] i.g.e.s.a.service.JobManagementService   : Creating CRON job: Job to Retrieve
+    2026-04-17T11:03:41.409+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-6] i.g.e.s.adapter.in.web.JobController     : Received request to get job: b1ea58f4-6184-4d97-b90a-790660bf27ea
+
+JobApiIntegrationTest > shouldGetAllJobs() STANDARD_OUT
+    2026-04-17T11:03:41.414+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-7] i.g.e.s.adapter.in.web.JobController     : Received request to create CRON job: Job 1
+    2026-04-17T11:03:41.414+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-7] i.g.e.s.a.service.JobManagementService   : Creating CRON job: Job 1
+    2026-04-17T11:03:41.418+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-8] i.g.e.s.adapter.in.web.JobController     : Received request to create CRON job: Job 2
+    2026-04-17T11:03:41.418+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-8] i.g.e.s.a.service.JobManagementService   : Creating CRON job: Job 2
+    2026-04-17T11:03:41.421+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-9] i.g.e.s.adapter.in.web.JobController     : Received request to get all jobs (status: null, type: null)
+
+JobApiIntegrationTest > shouldFilterJobsByStatus() STANDARD_OUT
+    2026-04-17T11:03:41.435+07:00  INFO 40939 --- [scheduler] [-auto-1-exec-10] i.g.e.s.adapter.in.web.JobController     : Received request to get all jobs (status: SCHEDULED, type: null)
+
+JobApiIntegrationTest > shouldCancelJob() STANDARD_OUT
+    2026-04-17T11:03:41.444+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-1] i.g.e.s.adapter.in.web.JobController     : Received request to create CRON job: Job to Cancel
+    2026-04-17T11:03:41.445+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-1] i.g.e.s.a.service.JobManagementService   : Creating CRON job: Job to Cancel
+    2026-04-17T11:03:41.449+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-2] i.g.e.s.adapter.in.web.JobController     : Received request to cancel job: 545dbbef-100e-4e07-a6e2-f893a79d49ae
+    2026-04-17T11:03:41.450+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-2] i.g.e.s.a.service.JobManagementService   : Job cancelled: Job to Cancel (ID: 545dbbef-100e-4e07-a6e2-f893a79d49ae)
+    2026-04-17T11:03:41.452+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-3] i.g.e.s.adapter.in.web.JobController     : Received request to get job: 545dbbef-100e-4e07-a6e2-f893a79d49ae
+
+JobApiIntegrationTest > shouldCreateCronJobViaMockMessageAdapter() STANDARD_OUT
+    2026-04-17T11:03:41.455+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.a.i.m.MockMessageEventListener   : Mock inbound adapter received job schedule event for 'Message Triggered CRON'
+    2026-04-17T11:03:41.456+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.a.s.JobScheduleEventService      : Handling job schedule event for job 'Message Triggered CRON' of type CRON
+    2026-04-17T11:03:41.456+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.a.service.JobManagementService   : Creating CRON job: Message Triggered CRON
+
+JobApiIntegrationTest > shouldNotMarkRecentExecutionsAsTimeout() STANDARD_OUT
+    2026-04-17T11:03:41.462+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-4] i.g.e.s.adapter.in.web.JobController     : Received request to create CRON job: Job with Recent Execution
+    2026-04-17T11:03:41.462+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-4] i.g.e.s.a.service.JobManagementService   : Creating CRON job: Job with Recent Execution
+
+JobApiIntegrationTest > shouldMarkStaleExecutionsAsTimeout() STANDARD_OUT
+    2026-04-17T11:03:41.478+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-5] i.g.e.s.adapter.in.web.JobController     : Received request to create CRON job: Job with Stale Execution
+    2026-04-17T11:03:41.478+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-5] i.g.e.s.a.service.JobManagementService   : Creating CRON job: Job with Stale Execution
+    2026-04-17T11:03:41.483+07:00  WARN 40939 --- [scheduler] [    Test worker] i.g.e.s.a.i.q.JobExecutionCleanupJob     : Marked stale job execution 90a65fda-b16d-4fc8-b951-8895affc103e for job 906c15cc-2ce1-4476-ab9a-cc7276f36b03 as TIMEOUT
+    2026-04-17T11:03:41.483+07:00  INFO 40939 --- [scheduler] [    Test worker] i.g.e.s.a.i.q.JobExecutionCleanupJob     : Cleanup job completed: marked 1 stale executions as TIMEOUT
+
+JobApiIntegrationTest > shouldCreateDelayedJob() STANDARD_OUT
+    2026-04-17T11:03:41.491+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-6] i.g.e.s.adapter.in.web.JobController     : Received request to create delayed job: Test Delayed Job
+    2026-04-17T11:03:41.492+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-6] i.g.e.s.a.service.JobManagementService   : Creating delayed job: Test Delayed Job
+
+JobApiIntegrationTest > shouldCreateCronJob() STANDARD_OUT
+    2026-04-17T11:03:41.501+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-4] i.g.e.s.adapter.in.web.JobController     : Received request to create CRON job: Test CRON Job
+    2026-04-17T11:03:41.501+07:00  INFO 40939 --- [scheduler] [o-auto-1-exec-4] i.g.e.s.a.service.JobManagementService   : Creating CRON job: Test CRON Job
+
+2026-04-17T11:03:43.518+07:00  INFO 40939 --- [scheduler] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-17T11:03:43.526+07:00  INFO 40939 --- [scheduler] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-17T11:03:43.528+07:00  INFO 40939 --- [scheduler] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-04-17T11:03:43.528+07:00  INFO 40939 --- [scheduler] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+> Task :test FAILED
+
+18 tests completed, 1 failed
+Generating HTML test report...
+Finished generating test html results (0.041 secs) into: /Users/bangun.saputra/Bangun/Projects/scheduler/build/reports/tests/test
+Finished generating test XML results (0.004 secs) into: /Users/bangun.saputra/Bangun/Projects/scheduler/build/test-results/test
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///Users/bangun.saputra/Bangun/Projects/scheduler/build/reports/tests/test/index.html
+
+* Try:
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 6s
+8 actionable tasks: 1 executed, 7 up-to-date
+Watched directory hierarchies: [/Users/bangun.saputra/Bangun/Projects/scheduler]

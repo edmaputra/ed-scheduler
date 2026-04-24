@@ -7,3 +7,5 @@ databaseChangeLog:
       file: db/changelog/003-add-topic-column.yaml
   - include:
       file: db/changelog/004-job-lifecycle-refinement.yaml
+  - include:
+      file: db/changelog/005-create-inbound-message-events-table.yaml

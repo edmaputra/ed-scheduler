@@ -155,41 +155,55 @@ Schedule a one-time job to execute at a specific time.
 
 ## Message Event Listener
 
-The application provides a `MessageEventListener` interface for integrating with message providers (Kafka, RabbitMQ, SQS, etc.).
+Inbound messaging uses a shared adapter-in contract so mock and production listeners expose the same method. The current implementation includes:
+
+- `MockMessageEventListener` for test/local flows without a broker
+- `KafkaMessageEventListener` as a production-shaped adapter that can be connected to a real Kafka listener later
 
 ### Interface
 
 ```java
 public interface MessageEventListener {
-    void onJobScheduleEvent(JobScheduleEvent event);
-    void startListening();
-    void stopListening();
-    boolean isListening();
+  MessageProcessingResult onJobScheduleEvent(JobScheduleEvent event);
 }
 ```
 
-### Example Implementation (Kafka)
+### Example Implementation (Kafka-shaped adapter)
 
 ```java
 @Component
-public class KafkaJobEventListener implements MessageEventListener {
-    
-    @Autowired
-    private JobEventHandlerService jobEventHandlerService;
-    
-    @KafkaListener(topics = "job-schedule-events")
-    public void onJobScheduleEvent(JobScheduleEvent event) {
-        jobEventHandlerService.handleJobScheduleEvent(event);
+@ConditionalOnProperty(name = "scheduler.messaging.inbound.provider", havingValue = "kafka")
+public class KafkaMessageEventListener implements MessageEventListener {
+
+  private final JobScheduleEventUseCase jobScheduleEventUseCase;
+
+  @Override
+  public MessageProcessingResult onJobScheduleEvent(JobScheduleEvent event) {
+    return jobScheduleEventUseCase.handle(event);
     }
-    
-    // Implement other methods...
 }
 ```
+
+### Provider Selection
+
+Choose the active inbound adapter with:
+
+```properties
+scheduler.messaging.inbound.provider=none
+```
+
+Supported values:
+
+- `none`: inbound messaging adapter disabled
+- `mock`: enable mock adapter-in (used in test profile)
+- `kafka`: enable Kafka-shaped adapter-in
 
 ### JobScheduleEvent Format
 
 ```json
 {
+  "eventId": "evt-0001",
+  "correlationId": "corr-2026-04-17-001",
   "jobType": "CRON",
   "name": "Automated Backup",
   "description": "Daily database backup",
@@ -224,6 +238,44 @@ spring.quartz.properties.org.quartz.jobStore.isClustered=true
 spring.quartz.properties.org.quartz.threadPool.threadCount=10
 ```
 
+## Multi-Instance Deployment
+
+The application is designed to run safely on multiple replicas as long as they share the same PostgreSQL database and Quartz JDBC job store.
+
+### What Makes It Safe
+
+- Quartz clustering is enabled through JDBC-backed job storage.
+- Scheduled job triggers are acquired by only one instance at a time.
+- The cleanup job is scheduled as a Quartz job, so it is also coordinated by the cluster.
+- System jobs do not create `JobExecution` records, so there is no feedback loop.
+
+### Required Settings
+
+```properties
+spring.quartz.job-store-type=jdbc
+spring.quartz.properties.org.quartz.jobStore.class=org.springframework.scheduling.quartz.LocalDataSourceJobStore
+spring.quartz.properties.org.quartz.jobStore.driverDelegateClass=org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+spring.quartz.properties.org.quartz.jobStore.isClustered=true
+spring.quartz.properties.org.quartz.jobStore.clusterCheckinInterval=20000
+```
+
+### Deployment Checklist
+
+- Use one shared PostgreSQL database for all instances.
+- Make sure Liquibase has created the Quartz tables.
+- Keep system clocks reasonably synchronized across instances.
+- Confirm each instance uses the same Quartz configuration.
+
+### What Runs in the Cluster
+
+- User-defined CRON jobs.
+- One-time delayed jobs.
+- `JobExecutionCleanupJob`, which marks stale executions as `TIMEOUT`.
+
+### Notes
+
+- If you add future scheduled maintenance tasks, prefer Quartz jobs so the cluster continues to own coordination.
+
 ## Architecture
 
 The project now uses **Hexagonal Architecture (Ports and Adapters)**.
@@ -251,16 +303,20 @@ Core business behavior is implemented as use cases and ports in the application 
 
 3. **Inbound Adapters**
   - Convert external input to use-case calls
-  - `controller/JobController` (HTTP)
-  - `messaging/JobEventHandlerService` (message event handling)
-  - `quartz/ScheduledJob` (Quartz trigger entrypoint)
+  - `adapter/in/web/JobController` (HTTP)
+  - `adapter/in/quartz/ScheduledJob` (job execution entrypoint)
+  - `adapter/in/quartz/JobExecutionCleanupJob` (system cleanup job)
 
 4. **Outbound Adapters**
   - Implement outbound ports for specific technologies
-  - `infrastructure/persistence/JpaJobStoreAdapter`
-  - `infrastructure/persistence/JpaJobExecutionStoreAdapter`
-  - `infrastructure/scheduler/QuartzJobSchedulerAdapter`
-  - `infrastructure/messaging/MessagePublisherAdapter`
+  - `adapter/out/persistence/JpaJobStoreAdapter`
+  - `adapter/out/persistence/JpaJobExecutionStoreAdapter`
+  - `adapter/out/persistence/repository/JobRepository`
+  - `adapter/out/persistence/repository/JobExecutionRepository`
+  - `adapter/out/scheduler/QuartzJobSchedulerAdapter`
+  - `adapter/out/messaging/MessagePublisherAdapter`
+  - `adapter/out/messaging/DefaultMessagePublisher`
+  - `adapter/out/messaging/MessagePublisherConfiguration`
 
 ### Package Structure
 
@@ -271,9 +327,9 @@ src/main/java/io/github/edmaputra/scheduler
 │   │   ├── in
 │   │   └── out
 │   └── service
+├── config
 ├── adapter
 │   ├── in
-│   │   ├── messaging
 │   │   ├── quartz
 │   │   └── web
 │   └── out

@@ -3,6 +3,7 @@ package io.github.edmaputra.scheduler.integration;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 
+import io.github.edmaputra.scheduler.adapter.in.messaging.MessageEventListener;
 import io.github.edmaputra.scheduler.adapter.in.quartz.JobExecutionCleanupJob;
 import io.github.edmaputra.scheduler.adapter.out.messaging.MessagePublisher;
 import io.github.edmaputra.scheduler.adapter.out.persistence.repository.JobExecutionRepository;
@@ -14,6 +15,9 @@ import io.github.edmaputra.scheduler.domain.JobType;
 import io.github.edmaputra.scheduler.dto.CreateCronJobRequest;
 import io.github.edmaputra.scheduler.dto.CreateDelayedJobRequest;
 import io.github.edmaputra.scheduler.dto.JobResponse;
+import io.github.edmaputra.scheduler.dto.JobScheduleEvent;
+import io.github.edmaputra.scheduler.dto.MessageProcessingResult;
+import io.github.edmaputra.scheduler.dto.MessageProcessingStatus;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -64,6 +68,9 @@ public class JobApiIntegrationTest {
 
   @Autowired
   private JobRepository jobRepository;
+
+  @Autowired
+  private MessageEventListener messageEventListener;
 
   @BeforeEach
   void setUp() {
@@ -337,6 +344,51 @@ public class JobApiIntegrationTest {
     assertThat(updatedExecution.getCompletedAt()).isNotNull();
     assertThat(updatedExecution.getStaleSince()).isNotNull();
     assertThat(updatedExecution.getErrorMessage()).contains("timed out after one hour");
+  }
+
+  @Test
+  void shouldCreateCronJobViaMockMessageAdapter() {
+    JobScheduleEvent event = JobScheduleEvent.builder()
+        .eventId("evt-integration-1")
+        .correlationId("corr-integration-1")
+        .jobType(JobType.CRON)
+        .name("Message Triggered CRON")
+        .description("Created via mock inbound adapter")
+        .cronExpression("0 0 11 * * ?")
+        .payload("{\"source\":\"message\"}")
+        .createdBy("integration-test")
+        .build();
+
+    MessageProcessingResult response = messageEventListener.onJobScheduleEvent(event);
+
+    assertThat(response).isNotNull();
+    assertThat(response.getStatus()).isEqualTo(MessageProcessingStatus.PROCESSED);
+    assertThat(response.getJobId()).isNotNull();
+
+    Job persisted = jobRepository.findById(response.getJobId()).orElseThrow();
+    assertThat(persisted.getName()).isEqualTo("Message Triggered CRON");
+    assertThat(persisted.getType()).isEqualTo(JobType.CRON);
+    assertThat(persisted.getStatus()).isEqualTo(JobStatus.PENDING);
+  }
+
+  @Test
+  void shouldIgnoreDuplicateEventViaMockMessageAdapter() {
+    JobScheduleEvent event = JobScheduleEvent.builder()
+        .eventId("evt-integration-dup-1")
+        .correlationId("corr-integration-dup")
+        .jobType(JobType.CRON)
+        .name("Message Triggered Duplicate")
+        .description("Duplicate delivery simulation")
+        .cronExpression("0 0 11 * * ?")
+        .payload("{\"source\":\"message\"}")
+        .createdBy("integration-test")
+        .build();
+
+    MessageProcessingResult first = messageEventListener.onJobScheduleEvent(event);
+    MessageProcessingResult second = messageEventListener.onJobScheduleEvent(event);
+
+    assertThat(first.getStatus()).isEqualTo(MessageProcessingStatus.PROCESSED);
+    assertThat(second.getStatus()).isEqualTo(MessageProcessingStatus.DUPLICATE);
   }
 
   @Test

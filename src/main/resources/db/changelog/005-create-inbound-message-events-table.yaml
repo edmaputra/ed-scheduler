@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5-create-inbound-message-events-table
+      author: scheduler
+      changes:
+        - createTable:
+            tableName: inbound_message_events
+            columns:
+              - column:
+                  name: event_id
+                  type: varchar(255)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: correlation_id
+                  type: varchar(255)
+              - column:
+                  name: status
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: job_id
+                  type: uuid
+              - column:
+                  name: error_message
+                  type: text
+              - column:
+                  name: processed_at
+                  type: timestamp
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+
+        - createIndex:
+            indexName: idx_inbound_message_events_status
+            tableName: inbound_message_events
+            columns:
+              - column:
+                  name: status
+
+        - createIndex:
+            indexName: idx_inbound_message_events_correlation_id
+            tableName: inbound_message_events
+            columns:
+              - column:
+                  name: correlation_id
